@@ -2,27 +2,25 @@ import { motion } from 'framer-motion';
 
 const About = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-5 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
           <motion.div
-            className="md:col-span-2"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-primary leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight tracking-tight">
               Vos projets numériques gérés en mode agile de la Conception au Déploiement
             </h2>
           </motion.div>
           <motion.div
-            className="md:col-span-3"
+            className="space-y-6 text-lg text-gray-700"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-6 text-lg text-gray-600"
           >
             <p>
               Nous sommes une agence de développement spécialisée dans la construction de produits numériques sur mesure.
