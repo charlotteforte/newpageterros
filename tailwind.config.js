@@ -7,12 +7,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        'primary': '#58739c',
-        'secondary': '#31d3ae',
-        'accent': '#7ed7c1',
+        'primary': '#0052FF',
+        'secondary': '#1F2937',
+        'accent': '#6B7280',
       },
       fontFamily: {
-        sans: ['Roboto', 'sans-serif'],
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
       },
     },
   },
