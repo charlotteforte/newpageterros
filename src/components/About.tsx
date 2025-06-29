@@ -2,36 +2,36 @@ import { motion } from 'framer-motion';
 
 const About = () => {
   return (
-    <section className="py-24 bg-gray-50">
+    <section className="py-28 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+        <div className="text-center max-w-4xl mx-auto">
+          <motion.h2 
+            className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight tracking-tight">
-              Vos projets numériques gérés en mode agile de la Conception au Déploiement
-            </h2>
-          </motion.div>
-          <motion.div
-            className="space-y-6 text-lg text-gray-700"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            Vos projets numériques, de la conception au déploiement
+          </motion.h2>
+          <motion.p 
+            className="mt-6 text-lg text-gray-600"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <p>
-              Nous sommes une agence de développement spécialisée dans la construction de produits numériques sur mesure.
-            </p>
-            <p>
-              Nous développons des plateformes web dynamiques, des applications mobiles et des algorithmes de Scraping et automatisation en nous basant sur les technologies les plus adaptées.
-            </p>
-            <p className="font-semibold text-primary">
-              Notre philosophie : le code est au service du projet, et non l'inverse.
-            </p>
-          </motion.div>
+            Nous sommes une agence de développement spécialisée dans la construction de produits numériques sur mesure. Nous développons des plateformes web dynamiques, des applications mobiles et des algorithmes de Scraping et automatisation en nous basant sur les technologies les plus adaptées.
+          </motion.p>
+          <motion.p 
+            className="mt-4 text-lg font-semibold text-primary"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            Notre philosophie : le code est au service du projet, et non l'inverse.
+          </motion.p>
         </div>
       </div>
     </section>

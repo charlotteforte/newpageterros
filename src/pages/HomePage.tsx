@@ -3,6 +3,7 @@ import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
 import TrustedBy from '@/components/TrustedBy';
 import About from '@/components/About';
+import Testimonials from '@/components/Testimonials';
 
 const HomePage = () => {
   return (
@@ -12,6 +13,7 @@ const HomePage = () => {
         <Hero />
         <TrustedBy />
         <About />
+        <Testimonials />
       </main>
       <Footer />
     </div>
