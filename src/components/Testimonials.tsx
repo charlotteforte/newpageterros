@@ -1,5 +1,11 @@
 import { motion } from 'framer-motion';
 import { FaQuoteLeft } from 'react-icons/fa';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const testimonials = [
   {
@@ -24,48 +30,86 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-24 bg-gray-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">Ils parlent de nous</h2>
-          <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-600">
-            Nous accompagnons plus de 50 clients startups, PME et grands groupes dans la mise en place de projets numériques variés.
-          </p>
-          <p className="mt-2 max-w-3xl mx-auto text-lg text-gray-600">
-            Applications Web et Mobile, outils d'automatisation et de prospection et APIs sur mesure font partie de nos spécialités.
-          </p>
-        </motion.div>
+    <>
+      <style>{`
+        .testimonial-slider .swiper-button-next,
+        .testimonial-slider .swiper-button-prev {
+          color: #111827;
+        }
+        .testimonial-slider .swiper-button-next:after,
+        .testimonial-slider .swiper-button-prev:after {
+          font-size: 1.5rem;
+          font-weight: 600;
+        }
+        .testimonial-slider .swiper-pagination-bullet {
+          background: #9ca3af;
+          width: 10px;
+          height: 10px;
+          opacity: 0.8;
+        }
+        .testimonial-slider .swiper-pagination-bullet-active {
+          background: #1f2937;
+          opacity: 1;
+        }
+        .testimonial-slider {
+          padding-bottom: 3rem;
+        }
+      `}</style>
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">Ils parlent de nous</h2>
+            <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-600">
+              Nous accompagnons plus de 50 clients startups, PME et grands groupes dans la mise en place de projets numériques variés.
+            </p>
+          </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              className="bg-white p-8 rounded-xl shadow-lg flex flex-col"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Swiper
+              modules={[Navigation, Pagination, Autoplay]}
+              spaceBetween={30}
+              slidesPerView={1}
+              navigation
+              pagination={{ clickable: true }}
+              autoplay={{
+                delay: 8000,
+                disableOnInteraction: false,
+              }}
+              loop={true}
+              className="testimonial-slider"
             >
-              <FaQuoteLeft className="text-primary text-3xl mb-6" />
-              <p className="text-gray-600 flex-grow">"{testimonial.quote}"</p>
-              <div className="mt-8 flex items-center">
-                <img src={testimonial.image} alt={testimonial.author} className="w-14 h-14 rounded-full object-cover mr-4" />
-                <div>
-                  <p className="font-bold text-gray-900">{testimonial.author}</p>
-                  <p className="text-sm text-gray-500">{testimonial.title}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+              {testimonials.map((testimonial, index) => (
+                <SwiperSlide key={index}>
+                  <div className="text-center max-w-3xl mx-auto">
+                    <FaQuoteLeft className="text-primary text-4xl mb-6 mx-auto" />
+                    <p className="text-xl md:text-2xl italic text-gray-700 leading-relaxed">
+                      "{testimonial.quote}"
+                    </p>
+                    <div className="mt-8">
+                      <img src={testimonial.image} alt={testimonial.author} className="w-20 h-20 rounded-full object-cover mx-auto mb-4 border-4 border-white shadow-lg" />
+                      <p className="font-bold text-gray-900 text-xl">{testimonial.author}</p>
+                      <p className="text-gray-500">{testimonial.title}</p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </motion.div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
