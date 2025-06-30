@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { FaPencilRuler, FaCode, FaRocket, FaSyncAlt } from 'react-icons/fa';
+import { FaPencilRuler, FaCode, FaRocket, FaSyncAlt, FaUsers, FaListAlt, FaBullseye } from 'react-icons/fa';
 
 const steps = [
   {
@@ -23,6 +23,21 @@ const steps = [
     icon: <FaSyncAlt className="h-8 w-8 text-primary" />,
     title: "Évolution",
     description: "Un bon produit est un produit qui évolue. Nous demeurons à vos côtés sur toute la durée de votre projet pour assurer la maintenance et l'ajout de nouvelles fonctionnalités."
+  }
+];
+
+const questions = [
+  {
+    icon: <FaUsers className="h-6 w-6 text-primary" />,
+    text: "S'agit-il d'un projet à destination du grand public ou de vos équipes métiers ?"
+  },
+  {
+    icon: <FaListAlt className="h-6 w-6 text-primary" />,
+    text: "Quelles seront les principales fonctionnalités du projet ?"
+  },
+  {
+    icon: <FaBullseye className="h-6 w-6 text-primary" />,
+    text: "Quel sera l'usage type de cette plateforme ?"
   }
 ];
 
@@ -79,6 +94,67 @@ const MethodePage = () => {
 
         <section className="py-24 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-4xl mx-auto mb-20">
+              <motion.h2 
+                className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.8 }}
+              >
+                Comprendre le besoin
+              </motion.h2>
+              <motion.p 
+                className="mt-6 text-lg text-gray-600 leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                La phase de conception vise avant tout à déterminer avec précision l'objectif du projet en préparation.
+              </motion.p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <motion.div
+                className="space-y-10"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.8 }}
+              >
+                {questions.map((q, i) => (
+                  <div key={i} className="flex items-start">
+                    <div className="flex-shrink-0 h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      {q.icon}
+                    </div>
+                    <div className="ml-4">
+                      <p className="text-lg font-semibold text-secondary">{q.text}</p>
+                    </div>
+                  </div>
+                ))}
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                <p className="text-lg text-gray-600 leading-relaxed mb-8">
+                  Nous mettons à profit notre expertise, acquise à travers plus de 50 projets numériques, pour vous aider à répondre à ces questions.
+                </p>
+                <img 
+                  src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200&auto=format&fit=crop" 
+                  alt="Team brainstorming"
+                  className="rounded-lg shadow-xl object-cover w-full"
+                />
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-24 bg-gray-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12">
               {steps.map((step, index) => (
                 <motion.div
@@ -103,7 +179,7 @@ const MethodePage = () => {
             </div>
           </div>
         </section>
-        <section className="py-24 bg-gray-50">
+        <section className="py-24 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.h2 
               className="text-3xl md:text-4xl font-bold text-gray-900"
