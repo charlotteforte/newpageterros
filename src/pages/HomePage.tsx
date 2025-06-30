@@ -5,6 +5,7 @@ import TrustedBy from '@/components/TrustedBy';
 import Stats from '@/components/Stats';
 import About from '@/components/About';
 import Testimonials from '@/components/Testimonials';
+import LeoFeature from '@/components/LeoFeature';
 
 const HomePage = () => {
   return (
@@ -16,6 +17,7 @@ const HomePage = () => {
         <Stats />
         <About />
         <Testimonials />
+        <LeoFeature />
       </main>
       <Footer />
     </div>
