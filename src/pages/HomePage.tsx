@@ -6,6 +6,7 @@ import Stats from '@/components/Stats';
 import About from '@/components/About';
 import Testimonials from '@/components/Testimonials';
 import LeoFeature from '@/components/LeoFeature';
+import AgencyIntro from '@/components/AgencyIntro';
 
 const HomePage = () => {
   return (
@@ -18,6 +19,7 @@ const HomePage = () => {
         <About />
         <Testimonials />
         <LeoFeature />
+        <AgencyIntro />
       </main>
       <Footer />
     </div>
