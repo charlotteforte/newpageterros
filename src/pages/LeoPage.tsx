@@ -23,7 +23,21 @@ const LeoPage = () => {
               <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
                 Léo, le premier développeur IA made in France 🇫🇷
               </h1>
-              <p className="mt-6 text-lg md:text-xl max-w-3xl mx-auto text-gray-200">
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Intro Section */}
+        <section className="py-20 bg-gray-50">
+          <div className="container mx-auto px-6 lg:px-8 text-center">
+            <motion.div
+              className="max-w-4xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.8 }}
+            >
+              <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
                 Léo est un puissant assistant de génération de code qui rejoint votre équipe de développement en quelques minutes. Inscrivez-vous pour obtenir un accès anticipé et tester les capacités de Léo en avant-première !
               </p>
               <div className="mt-10">
@@ -33,7 +47,7 @@ const LeoPage = () => {
                 >
                   Obtenir un accès anticipé
                 </a>
-                <p className="mt-4 text-sm text-gray-400 font-semibold">👉 Léo par Terros</p>
+                <p className="mt-4 text-sm text-gray-500 font-semibold">👉 Léo par Terros</p>
               </div>
             </motion.div>
           </div>
