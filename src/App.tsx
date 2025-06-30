@@ -4,6 +4,7 @@ import MethodePage from '@/pages/MethodePage';
 import CasClientsPage from '@/pages/CasClientsPage';
 import AgencePage from '@/pages/AgencePage';
 import IntegrationPage from '@/pages/IntegrationPage';
+import LeoPage from '@/pages/LeoPage';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Route path="/cas-clients" element={<CasClientsPage />} />
       <Route path="/agence" element={<AgencePage />} />
       <Route path="/integration" element={<IntegrationPage />} />
+      <Route path="/leo" element={<LeoPage />} />
     </Routes>
   )
 }

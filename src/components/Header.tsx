@@ -8,7 +8,7 @@ const navLinks = [
   { name: 'Cas client', href: '/cas-clients' },
   { name: 'Agence', href: '/agence' },
   { name: 'Intégration', href: '/integration' },
-  { name: 'Leo, développeur IA', href: '#' },
+  { name: 'Leo, développeur IA', href: '/leo' },
 ];
 
 const Header = () => {
