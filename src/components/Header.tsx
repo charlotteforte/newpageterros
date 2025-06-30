@@ -7,7 +7,7 @@ const navLinks = [
   { name: 'Méthode', href: '/methode' },
   { name: 'Cas client', href: '/cas-clients' },
   { name: 'Agence', href: '/agence' },
-  { name: 'Intégration', href: '#' },
+  { name: 'Intégration', href: '/integration' },
   { name: 'Leo, développeur IA', href: '#' },
 ];
 
