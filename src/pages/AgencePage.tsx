@@ -33,14 +33,14 @@ const AgencePage = () => {
         >
           <div className="absolute inset-0 bg-black/60"></div>
           <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-center min-h-[60vh] pt-40 pb-20">
+            <div className="flex items-center justify-center min-h-[70vh] pt-40 pb-20">
               <motion.div
                 className="text-center max-w-3xl mx-auto"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter">
+                <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
                   À propos de Terros
                 </h1>
                 <p className="mt-6 text-lg text-gray-200 max-w-2xl mx-auto">
@@ -54,7 +54,7 @@ const AgencePage = () => {
         {/* Section 1 — Une agence de développement sur mesure */}
         <section className="py-24 bg-gray-50">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="grid lg:grid-cols-2 gap-x-16 gap-y-12 items-center">
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -75,8 +75,8 @@ const AgencePage = () => {
                     >
                         <img 
                             src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=1170&auto=format&fit=crop" 
-                            alt="Hubby Mockup – Mobile App Terros"
-                            className="rounded-lg shadow-2xl object-cover max-w-sm w-full"
+                            alt="Maquette de l'application mobile Terros sur un smartphone"
+                            className="rounded-lg shadow-2xl object-cover max-w-lg w-full"
                         />
                     </motion.div>
                 </div>
@@ -91,7 +91,7 @@ const AgencePage = () => {
                         <a 
                             key={link.name} 
                             href={link.href}
-                            className="text-base font-medium text-accent hover:text-primary transition-colors duration-300"
+                            className="text-base font-medium text-gray-600 hover:text-primary transition-colors duration-300"
                         >
                             {link.name}
                         </a>
@@ -103,7 +103,7 @@ const AgencePage = () => {
         {/* Section 3 — Notre champ d’action */}
         <section id="champ-action" className="py-24 bg-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="grid lg:grid-cols-2 gap-x-16 gap-y-12 items-center">
                     <motion.div
                         className="flex justify-center"
                         initial={{ opacity: 0, x: -50 }}
@@ -113,8 +113,8 @@ const AgencePage = () => {
                     >
                         <img 
                             src="https://images.unsplash.com/photo-1559028006-44a36b17c365?q=80&w=1200&auto=format&fit=crop" 
-                            alt="Visuel blog Terros Immo Fonctionnaire"
-                            className="rounded-lg shadow-2xl object-cover max-w-md w-full"
+                            alt="Capture d'écran d'un article de blog sur un ordinateur portable"
+                            className="rounded-lg shadow-2xl object-cover max-w-lg w-full"
                         />
                     </motion.div>
                     <motion.div
@@ -138,7 +138,7 @@ const AgencePage = () => {
         {/* Section 4 — La Plateformisation */}
         <section id="plateformisation" className="py-24 bg-gray-50">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="grid lg:grid-cols-2 gap-x-16 gap-y-12 items-center">
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -162,8 +162,8 @@ const AgencePage = () => {
                     >
                         <img 
                             src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1170&auto=format&fit=crop" 
-                            alt="Serenest Application Dashboard"
-                            className="rounded-lg shadow-2xl object-cover max-w-md w-full"
+                            alt="Tableau de bord d'une application avec des graphiques et des données"
+                            className="rounded-lg shadow-2xl object-cover max-w-lg w-full"
                         />
                     </motion.div>
                 </div>
@@ -173,7 +173,7 @@ const AgencePage = () => {
         {/* Section 5 — Ce qui nous différencie */}
         <section id="differentiation" className="py-24 bg-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="grid lg:grid-cols-2 gap-x-16 gap-y-12 items-center">
                     <motion.div
                         className="flex justify-center"
                         initial={{ opacity: 0, x: -50 }}
@@ -183,8 +183,8 @@ const AgencePage = () => {
                     >
                         <img 
                             src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=1170&auto=format&fit=crop" 
-                            alt="Roederer - Domaines Ott Terros"
-                            className="rounded-lg shadow-2xl object-cover max-w-md w-full"
+                            alt="Page d'accueil du site web Domaines Ott par Terros affichée sur un écran"
+                            className="rounded-lg shadow-2xl object-cover max-w-lg w-full"
                         />
                     </motion.div>
                     <motion.div
@@ -196,10 +196,10 @@ const AgencePage = () => {
                         <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-8">Ce qui nous différencie</h2>
                         <div className="space-y-6">
                             {differentiators.map(item => (
-                                <div key={item.title} className="flex items-start">
-                                    <FiCheckCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                                <div key={item.title} className="bg-gray-50 rounded-lg p-6 flex items-start transform hover:-translate-y-1 transition-transform duration-300">
+                                    <FiCheckCircle className="h-7 w-7 text-primary mt-1 flex-shrink-0" />
                                     <div className="ml-4">
-                                        <h3 className="text-xl font-bold text-secondary">{item.title}</h3>
+                                        <h3 className="text-xl font-bold text-gray-900">{item.title}</h3>
                                         <p className="mt-1 text-gray-600">{item.description}</p>
                                     </div>
                                 </div>
@@ -213,7 +213,7 @@ const AgencePage = () => {
         {/* Section 6 — L’Évolution Technologique */}
         <section id="technologie" className="py-24 bg-gray-50">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="grid lg:grid-cols-2 gap-x-16 gap-y-12 items-center">
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -237,8 +237,8 @@ const AgencePage = () => {
                     >
                         <img 
                             src="https://images.unsplash.com/photo-1677756119517-756a188d2d94?q=80&w=1170&auto=format&fit=crop" 
-                            alt="Hubby À propos Terros"
-                            className="rounded-lg shadow-2xl object-cover max-w-md w-full"
+                            alt="Illustration abstraite de connexions neuronales symbolisant l'IA"
+                            className="rounded-lg shadow-2xl object-cover max-w-lg w-full"
                         />
                     </motion.div>
                 </div>
@@ -268,7 +268,7 @@ const AgencePage = () => {
                         {expertises.map((expertise, index) => (
                             <motion.div
                                 key={expertise}
-                                className="bg-gray-100 text-secondary font-semibold px-5 py-3 rounded-full"
+                                className="bg-gray-100 text-secondary font-semibold px-5 py-3 rounded-full transition-colors duration-300 hover:bg-primary hover:text-white cursor-pointer"
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
@@ -311,7 +311,7 @@ const AgencePage = () => {
             >
               <a 
                 href="#" 
-                className="mt-8 inline-flex items-center bg-primary text-white font-bold py-4 px-8 rounded-lg text-lg hover:bg-primary-dark transition-colors duration-300"
+                className="mt-8 inline-flex items-center bg-primary text-white font-bold py-4 px-8 rounded-lg text-lg hover:bg-primary-focus transition-all duration-300 transform hover:scale-105"
               >
                 Nous contacter <FiArrowRight className="ml-2" />
               </a>
