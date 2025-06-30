@@ -29,25 +29,32 @@ const IntegrationPage = () => {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center py-24 md:py-32">
-              <motion.h1
-                className="text-5xl md:text-7xl font-extrabold tracking-tighter text-gray-900"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
+        <section className="py-24 bg-gray-50">
+          <div className="container mx-auto px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <motion.div
+                className="text-center lg:text-left"
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7 }}
               >
-                Nos principales intégrations
-              </motion.h1>
-              <motion.p
-                className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">System and API Integration</h1>
+                <p className="mt-6 text-lg text-gray-600">
+                  We connect your applications to an ecosystem of services to automate and enhance your operations.
+                </p>
+              </motion.div>
+              <motion.div
+                className="flex justify-center"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7, delay: 0.2 }}
               >
-                Nous intégrons les meilleures APIs et services externes dans vos applications.
-              </motion.p>
+                <img
+                  src="https://images.unsplash.com/photo-1614036125197-3b2d28574168?auto=format&fit=crop&w=1200&q=80"
+                  alt="API and System Integration"
+                  className="rounded-xl shadow-2xl w-full max-w-md"
+                />
+              </motion.div>
             </div>
           </div>
         </section>
