@@ -33,8 +33,8 @@ const Testimonials = () => {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">Ils parlent de nous</h2>
-            <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-600">
+            <h2 className="text-4xl md:text-5xl font-bold text-secondary tracking-tight">Ils parlent de nous</h2>
+            <p className="mt-4 max-w-3xl mx-auto text-lg text-accent">
               Nous accompagnons plus de 50 clients startups, PME et grands groupes dans la mise en place de projets numériques variés.
             </p>
           </motion.div>
@@ -43,18 +43,18 @@ const Testimonials = () => {
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={index}
-                className="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col"
+                className="bg-gray-50 p-8 rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <FaQuoteLeft className="text-primary text-4xl mb-6" />
-                <p className="text-gray-600 italic mb-6 flex-grow">
+                <FaQuoteLeft className="text-primary text-3xl mb-6" />
+                <p className="text-accent italic mb-6 flex-grow">
                   "{testimonial.quote}"
                 </p>
                 <div className="flex items-center mt-auto">
-                  <img src={testimonial.image} alt={testimonial.author} className="w-16 h-16 rounded-full object-cover mr-4 border-2 border-primary/50" />
+                  <img src={testimonial.image} alt={testimonial.author} className="w-14 h-14 rounded-full object-cover mr-4 border-2 border-primary/30" />
                   <div>
                     <p className="font-bold text-secondary text-lg">{testimonial.author}</p>
                     <p className="text-accent">{testimonial.title}</p>

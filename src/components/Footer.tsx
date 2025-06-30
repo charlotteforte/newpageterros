@@ -2,20 +2,30 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-100 text-gray-600">
-      <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="text-center md:text-left mb-4 md:mb-0">
-            <p className="text-2xl font-bold text-primary">Terros</p>
-            <p>Développement numérique sur mesure.</p>
+    <footer className="bg-secondary text-gray-300">
+      <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="md:col-span-1">
+            <h3 className="text-2xl font-bold text-white">Terros</h3>
+            <p className="mt-2 text-gray-400">Développement numérique sur mesure.</p>
           </div>
-          <div className="flex space-x-6">
-            <a href="#" className="hover:text-primary">Méthode</a>
-            <a href="#" className="hover:text-primary">Cas client</a>
-            <a href="#" className="hover:text-primary">Agence</a>
+          <div>
+            <h4 className="text-lg font-semibold text-white tracking-wider uppercase">Navigation</h4>
+            <ul className="mt-4 space-y-2">
+              <li><a href="/methode" className="hover:text-white transition-colors">Méthode</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Cas client</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Agence</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-lg font-semibold text-white tracking-wider uppercase">Contact</h4>
+            <ul className="mt-4 space-y-2">
+              <li><p>Paris, France</p></li>
+              <li><a href="mailto:contact@terros.fr" className="hover:text-white transition-colors">contact@terros.fr</a></li>
+            </ul>
           </div>
         </div>
-        <div className="mt-8 border-t border-gray-200 pt-4 text-center text-sm">
+        <div className="mt-12 border-t border-gray-700 pt-8 text-center text-gray-400">
           <p>&copy; {currentYear} Terros. Tous droits réservés.</p>
         </div>
       </div>
