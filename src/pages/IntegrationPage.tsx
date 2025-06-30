@@ -90,7 +90,7 @@ const IntegrationPage = () => {
                  <img 
                     src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1169&auto=format&fit=crop" 
                     alt="Team collaborating on a project"
-                    className="rounded-lg shadow-2xl object-cover"
+                    className="rounded-lg shadow-2xl w-full max-w-md"
                 />
               </motion.div>
             </div>
