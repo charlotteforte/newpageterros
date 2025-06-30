@@ -1,11 +1,5 @@
 import { motion } from 'framer-motion';
 import { FaQuoteLeft } from 'react-icons/fa';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
 const testimonials = [
   {
@@ -30,32 +24,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <>
-      <style>{`
-        .testimonial-slider .swiper-button-next,
-        .testimonial-slider .swiper-button-prev {
-          color: #111827;
-        }
-        .testimonial-slider .swiper-button-next:after,
-        .testimonial-slider .swiper-button-prev:after {
-          font-size: 1.5rem;
-          font-weight: 600;
-        }
-        .testimonial-slider .swiper-pagination-bullet {
-          background: #9ca3af;
-          width: 10px;
-          height: 10px;
-          opacity: 0.8;
-        }
-        .testimonial-slider .swiper-pagination-bullet-active {
-          background: #1f2937;
-          opacity: 1;
-        }
-        .testimonial-slider {
-          padding-bottom: 3rem;
-        }
-      `}</style>
-      <section className="py-24 bg-white">
+    <section className="py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -70,46 +39,32 @@ const Testimonials = () => {
             </p>
           </motion.div>
 
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.8 }}
-          >
-            <Swiper
-              modules={[Navigation, Pagination, Autoplay]}
-              spaceBetween={30}
-              slidesPerView={1}
-              navigation
-              pagination={{ clickable: true }}
-              autoplay={{
-                delay: 8000,
-                disableOnInteraction: false,
-              }}
-              loop={true}
-              className="testimonial-slider"
-            >
-              {testimonials.map((testimonial, index) => (
-                <SwiperSlide key={index}>
-                  <div className="text-center max-w-3xl mx-auto">
-                    <FaQuoteLeft className="text-primary text-4xl mb-6 mx-auto" />
-                    <p className="text-xl md:text-2xl italic text-gray-700 leading-relaxed">
-                      "{testimonial.quote}"
-                    </p>
-                    <div className="mt-8">
-                      <img src={testimonial.image} alt={testimonial.author} className="w-20 h-20 rounded-full object-cover mx-auto mb-4 border-4 border-white shadow-lg" />
-                      <p className="font-bold text-gray-900 text-xl">{testimonial.author}</p>
-                      <p className="text-gray-500">{testimonial.title}</p>
-                    </div>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                className="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <FaQuoteLeft className="text-primary text-4xl mb-6" />
+                <p className="text-gray-600 italic mb-6 flex-grow">
+                  "{testimonial.quote}"
+                </p>
+                <div className="flex items-center mt-auto">
+                  <img src={testimonial.image} alt={testimonial.author} className="w-16 h-16 rounded-full object-cover mr-4 border-2 border-primary/50" />
+                  <div>
+                    <p className="font-bold text-secondary text-lg">{testimonial.author}</p>
+                    <p className="text-accent">{testimonial.title}</p>
                   </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </motion.div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
-    </>
   );
 };
 
