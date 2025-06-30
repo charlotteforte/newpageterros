@@ -10,47 +10,44 @@ const LeoPage = () => {
       <Header />
       <main>
         {/* Hero Section */}
-        <section
-          className="relative bg-cover bg-center text-white min-h-[60vh] flex items-center"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1678483747899-e4896253163e?auto=format&fit=crop&w=1600&q=80')" }}
-        >
-          <div className="absolute inset-0 bg-black bg-opacity-60"></div>
-          <div className="relative container mx-auto px-6 lg:px-8 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
-                Léo, le premier développeur IA made in France 🇫🇷
-              </h1>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Intro Section */}
-        <section className="py-20 bg-gray-50">
-          <div className="container mx-auto px-6 lg:px-8 text-center">
-            <motion.div
-              className="max-w-4xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.8 }}
-            >
-              <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-                Léo est un puissant assistant de génération de code qui rejoint votre équipe de développement en quelques minutes. Inscrivez-vous pour obtenir un accès anticipé et tester les capacités de Léo en avant-première !
-              </p>
-              <div className="mt-10">
-                <a
-                  href="#"
-                  className="inline-block bg-primary text-white font-bold py-4 px-10 rounded-lg text-lg hover:bg-primary-focus transition-transform duration-300 transform hover:scale-105"
-                >
-                  Obtenir un accès anticipé
-                </a>
-                <p className="mt-4 text-sm text-gray-500 font-semibold">👉 Léo par Terros</p>
-              </div>
-            </motion.div>
+        <section className="bg-white py-20">
+          <div className="container mx-auto px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <motion.div
+                className="text-center lg:text-left"
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900">
+                  Léo, le premier développeur IA made in France 🇫🇷
+                </h1>
+                <p className="mt-6 text-lg md:text-xl text-gray-600 leading-relaxed">
+                  Léo est un puissant assistant de génération de code qui rejoint votre équipe de développement en quelques minutes. Inscrivez-vous pour obtenir un accès anticipé et tester les capacités de Léo en avant-première !
+                </p>
+                <div className="mt-10">
+                  <a
+                    href="#"
+                    className="inline-block bg-primary text-white font-bold py-4 px-10 rounded-lg text-lg hover:bg-primary-focus transition-transform duration-300 transform hover:scale-105"
+                  >
+                    Obtenir un accès anticipé
+                  </a>
+                  <p className="mt-4 text-sm text-gray-500 font-semibold">👉 Léo par Terros</p>
+                </div>
+              </motion.div>
+              <motion.div
+                className="hidden lg:flex justify-center"
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1678483747899-e4896253163e?auto=format&fit=crop&w=1600&q=80"
+                  alt="Léo AI Developer"
+                  className="rounded-2xl shadow-2xl w-full max-w-md"
+                />
+              </motion.div>
+            </div>
           </div>
         </section>
 
