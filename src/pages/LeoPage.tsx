@@ -36,7 +36,7 @@ const LeoPage = () => {
                 </div>
               </motion.div>
               <motion.div
-                className="hidden lg:flex justify-center"
+                className="flex justify-center mt-12 lg:mt-0"
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
