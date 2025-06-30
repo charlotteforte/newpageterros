@@ -38,9 +38,9 @@ const IntegrationPage = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7 }}
               >
-                <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">System and API Integration</h1>
+                <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">Intégration de Systèmes et d'APIs</h1>
                 <p className="mt-6 text-lg text-gray-600">
-                  We connect your applications to an ecosystem of services to automate and enhance your operations.
+                  Nous connectons vos applications à un écosystème de services pour automatiser et améliorer vos opérations.
                 </p>
               </motion.div>
               <motion.div
@@ -51,7 +51,7 @@ const IntegrationPage = () => {
               >
                 <img
                   src="https://images.unsplash.com/photo-1614036125197-3b2d28574168?auto=format&fit=crop&w=1200&q=80"
-                  alt="API and System Integration"
+                  alt="Illustration de connexions API et d'intégration de systèmes"
                   className="rounded-xl shadow-2xl w-full max-w-md"
                 />
               </motion.div>
@@ -62,7 +62,7 @@ const IntegrationPage = () => {
         {/* Informational Block */}
         <section className="py-24 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-x-16 gap-y-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -89,7 +89,7 @@ const IntegrationPage = () => {
               >
                  <img 
                     src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1169&auto=format&fit=crop" 
-                    alt="Team collaborating on a project"
+                    alt="Équipe collaborant sur un projet avec des graphiques"
                     className="rounded-lg shadow-2xl w-full max-w-md"
                 />
               </motion.div>
@@ -117,12 +117,11 @@ const IntegrationPage = () => {
               {integrations.map((integration, index) => (
                 <motion.div
                   key={integration.name}
-                  className="bg-white rounded-lg shadow-lg overflow-hidden group text-center p-8 flex flex-col items-center justify-center h-52"
+                  className="bg-white rounded-xl shadow-lg group text-center p-8 flex flex-col items-center justify-center h-56 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ y: -10, boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}
                 >
                   <div className="text-primary transition-transform duration-300 group-hover:scale-110">
                     {integration.icon}

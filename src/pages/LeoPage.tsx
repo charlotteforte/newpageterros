@@ -19,7 +19,7 @@ const LeoPage = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900">
+                <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 leading-tight">
                   Léo, le premier développeur IA made in France 🇫🇷
                 </h1>
                 <p className="mt-6 text-lg md:text-xl text-gray-600 leading-relaxed">
@@ -43,7 +43,7 @@ const LeoPage = () => {
               >
                 <img
                   src="https://images.unsplash.com/photo-1678483747899-e4896253163e?auto=format&fit=crop&w=1600&q=80"
-                  alt="Léo AI Developer"
+                  alt="Illustration d'un robot IA travaillant sur un ordinateur"
                   className="rounded-2xl shadow-2xl w-full max-w-md"
                 />
               </motion.div>
@@ -52,7 +52,7 @@ const LeoPage = () => {
         </section>
 
         {/* How it works section */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               className="text-center mb-16"
@@ -67,7 +67,7 @@ const LeoPage = () => {
               </p>
             </motion.div>
 
-            <div className="grid lg:grid-cols-2 gap-16 items-center mt-20">
+            <div className="grid lg:grid-cols-2 gap-x-16 gap-y-12 items-center mt-20">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -93,7 +93,7 @@ const LeoPage = () => {
               >
                  <img 
                     src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" 
-                    alt="AI developer workflow"
+                    alt="Tableau de bord présentant des graphiques d'analyse de données"
                     className="rounded-lg shadow-2xl w-full max-w-lg"
                 />
               </motion.div>
@@ -101,7 +101,7 @@ const LeoPage = () => {
 
             <div className="grid md:grid-cols-3 gap-8 mt-20 max-w-5xl mx-auto">
               <motion.div
-                className="text-center p-6 bg-white rounded-lg shadow-sm border border-gray-100"
+                className="text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
@@ -114,7 +114,7 @@ const LeoPage = () => {
                 <p className="mt-2 text-gray-600">Léo se connecte à votre dépôt Git pour lire et écrire du code, en comprenant l'ensemble du contexte de votre projet.</p>
               </motion.div>
               <motion.div
-                className="text-center p-6 bg-white rounded-lg shadow-sm border border-gray-100"
+                className="text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
@@ -127,7 +127,7 @@ const LeoPage = () => {
                 <p className="mt-2 text-gray-600">Donnez vos instructions en français. Léo comprend vos exigences et les traduit en code.</p>
               </motion.div>
               <motion.div
-                className="text-center p-6 bg-white rounded-lg shadow-sm border border-gray-100"
+                className="text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
