@@ -22,7 +22,20 @@ const LeoFeature = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            className="flex justify-center"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8 }}
+          >
+            <img 
+              src="https://images.unsplash.com/photo-1620712943543-95fc69614534?q=80&w=1332&auto=format&fit=crop" 
+              alt="AI Developer Robot"
+              className="rounded-xl shadow-2xl object-cover w-full h-full max-h-[500px]"
+            />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8 }}
@@ -44,7 +57,7 @@ const LeoFeature = () => {
                 <motion.div 
                   key={index} 
                   className="flex items-center"
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
@@ -56,19 +69,6 @@ const LeoFeature = () => {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
-          <motion.div
-            className="flex justify-center"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8 }}
-          >
-            <img 
-              src="https://images.unsplash.com/photo-1678483787332-6a414a530e13?q=80&w=1287&auto=format&fit=crop" 
-              alt="AI Developer"
-              className="rounded-xl shadow-2xl object-cover w-full h-full max-h-[500px]"
-            />
           </motion.div>
         </div>
       </div>
