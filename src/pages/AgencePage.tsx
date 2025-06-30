@@ -136,37 +136,31 @@ const AgencePage = () => {
         </section>
 
         {/* Section 4 — La Plateformisation */}
-        <section id="plateformisation" className="py-24 bg-gray-50">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid lg:grid-cols-2 gap-x-16 gap-y-12 items-center">
-                    <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, amount: 0.5 }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-6">Notre Spécialité : La Plateformisation</h2>
-                        <p className="text-lg text-gray-600 leading-relaxed mb-4">
-                            L'une de nos spécialités distinctives est la plateformisation. Nous sommes des experts dans la création de supports sur mesure qui permettent à différentes parties prenantes (clients, utilisateurs, prestataires, administrateurs, etc.) d’interagir facilement.
-                        </p>
-                        <p className="text-lg text-gray-600 leading-relaxed font-semibold text-primary">
-                            Notre priorité : la scalabilité pour accompagner votre croissance.
-                        </p>
-                    </motion.div>
-                    <motion.div
-                        className="flex justify-center"
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, amount: 0.5 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                    >
-                        <img 
-                            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1170&auto=format&fit=crop" 
-                            alt="Tableau de bord d'une application avec des graphiques et des données"
-                            className="rounded-lg shadow-2xl object-cover max-w-lg w-full"
-                        />
-                    </motion.div>
-                </div>
+        <section id="plateformisation" className="relative py-32 bg-gray-100 overflow-hidden">
+            <div className="absolute inset-0">
+                <img 
+                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1170&auto=format&fit=crop" 
+                    alt="Plateformisation background"
+                    className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-primary/80 mix-blend-multiply"></div>
+            </div>
+
+            <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+                <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ duration: 0.8 }}
+                >
+                    <h2 className="text-4xl font-extrabold text-white sm:text-5xl mb-6">Notre Spécialité : La Plateformisation</h2>
+                    <p className="text-xl text-gray-200 leading-relaxed mb-4">
+                        Nous sommes experts dans la création de supports sur mesure qui permettent à différentes parties prenantes (clients, utilisateurs, prestataires, administrateurs, etc.) d’interagir facilement.
+                    </p>
+                    <p className="text-xl text-white leading-relaxed font-bold">
+                        Notre priorité : la scalabilité pour accompagner votre croissance.
+                    </p>
+                </motion.div>
             </div>
         </section>
 
@@ -196,11 +190,11 @@ const AgencePage = () => {
                         <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-8">Ce qui nous différencie</h2>
                         <div className="space-y-6">
                             {differentiators.map(item => (
-                                <div key={item.title} className="bg-gray-50 rounded-lg p-6 flex items-start transform hover:-translate-y-1 transition-transform duration-300">
-                                    <FiCheckCircle className="h-7 w-7 text-primary mt-1 flex-shrink-0" />
+                                <div key={item.title} className="bg-white rounded-xl shadow-lg p-6 flex items-start transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-l-4 border-transparent hover:border-primary">
+                                    <FiCheckCircle className="h-8 w-8 text-primary mt-1 flex-shrink-0" />
                                     <div className="ml-4">
                                         <h3 className="text-xl font-bold text-gray-900">{item.title}</h3>
-                                        <p className="mt-1 text-gray-600">{item.description}</p>
+                                        <p className="mt-2 text-gray-600">{item.description}</p>
                                     </div>
                                 </div>
                             ))}
