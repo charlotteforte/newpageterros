@@ -94,27 +94,32 @@ const MethodePage = () => {
 
         <section className="py-24 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 gap-12">
-              {steps.map((step, index) => (
-                <motion.div
-                  key={index}
-                  className="flex"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.5 }}
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
-                >
-                  <div className="flex-shrink-0 mr-6">
-                    <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 text-primary">
-                      {step.icon}
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-secondary">{step.title}</h3>
-                    <p className="mt-3 text-gray-600 leading-relaxed">{step.description}</p>
-                  </div>
-                </motion.div>
-              ))}
+            <div className="max-w-4xl mx-auto">
+              <div className="relative">
+                {/* Vertical line on larger screens */}
+                <div className="hidden md:block absolute top-0 bottom-0 left-8 w-0.5 bg-gray-200" aria-hidden="true"></div>
+                
+                <div className="space-y-16">
+                  {steps.map((step, index) => (
+                    <motion.div
+                      key={index}
+                      className="md:flex items-start relative"
+                      initial={{ opacity: 0, x: -30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true, amount: 0.5 }}
+                      transition={{ duration: 0.6, delay: index * 0.2 }}
+                    >
+                      <div className="flex-shrink-0 w-16 h-16 flex items-center justify-center rounded-full bg-primary/10 text-primary md:bg-white md:ring-8 md:ring-white z-10">
+                        {step.icon}
+                      </div>
+                      <div className="mt-4 md:mt-0 md:ml-8">
+                        <h3 className="text-2xl font-bold text-secondary">{step.title}</h3>
+                        <p className="mt-3 text-gray-600 leading-relaxed">{step.description}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
