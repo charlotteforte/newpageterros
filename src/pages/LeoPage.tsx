@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { FiCode, FiMessageCircle, FiZap } from 'react-icons/fi';
+import { FiCode, FiMessageCircle, FiZap, FiCheck } from 'react-icons/fi';
+import { FaRobot, FaBook } from 'react-icons/fa';
 
 const LeoPage = () => {
   return (
