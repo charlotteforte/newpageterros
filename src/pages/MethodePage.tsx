@@ -94,6 +94,33 @@ const MethodePage = () => {
 
         <section className="py-24 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid md:grid-cols-2 gap-12">
+              {steps.map((step, index) => (
+                <motion.div
+                  key={index}
+                  className="flex"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.5, delay: index * 0.2 }}
+                >
+                  <div className="flex-shrink-0 mr-6">
+                    <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 text-primary">
+                      {step.icon}
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-secondary">{step.title}</h3>
+                    <p className="mt-3 text-gray-600 leading-relaxed">{step.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-24 bg-gray-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-4xl mx-auto mb-20">
               <motion.h2 
                 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight"
@@ -149,33 +176,6 @@ const MethodePage = () => {
                   className="rounded-lg shadow-xl object-cover w-full"
                 />
               </motion.div>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-24 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 gap-12">
-              {steps.map((step, index) => (
-                <motion.div
-                  key={index}
-                  className="flex"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.5 }}
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
-                >
-                  <div className="flex-shrink-0 mr-6">
-                    <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 text-primary">
-                      {step.icon}
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-secondary">{step.title}</h3>
-                    <p className="mt-3 text-gray-600 leading-relaxed">{step.description}</p>
-                  </div>
-                </motion.div>
-              ))}
             </div>
           </div>
         </section>
