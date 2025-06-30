@@ -46,24 +46,30 @@ const MethodePage = () => {
     <div className="bg-white text-gray-800 font-sans">
       <Header />
       <main>
-        <section className="pt-40 pb-24 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              className="text-center max-w-3xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h1 className="text-5xl md:text-7xl font-extrabold text-secondary tracking-tighter">
-                Méthode de développement agile
-              </h1>
-              <p className="mt-6 text-xl md:text-2xl text-accent">
-                Prototyper. Développer. Itérer.
-              </p>
-              <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-                Notre méthode de développement Web et Mobile agile vise à concevoir des produits de manière efficace et pragmatique.
-              </p>
-            </motion.div>
+        <section 
+          className="relative bg-cover bg-center text-white" 
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop')" }}
+        >
+          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-center min-h-[60vh] pt-40 pb-20">
+              <motion.div
+                className="text-center max-w-3xl mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter">
+                  Méthode de développement agile
+                </h1>
+                <p className="mt-6 text-xl md:text-2xl text-gray-200">
+                  Prototyper. Développer. Itérer.
+                </p>
+                <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
+                  Notre méthode de développement Web et Mobile agile vise à concevoir des produits de manière efficace et pragmatique.
+                </p>
+              </motion.div>
+            </div>
           </div>
         </section>
 
