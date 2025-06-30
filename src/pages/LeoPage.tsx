@@ -12,7 +12,7 @@ const LeoPage = () => {
         {/* Hero Section */}
         <section className="bg-white py-20">
           <div className="container mx-auto px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-x-16 gap-y-12 items-center">
               <motion.div
                 className="text-center lg:text-left"
                 initial={{ opacity: 0, x: -30 }}
