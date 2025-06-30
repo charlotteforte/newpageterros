@@ -1,21 +1,26 @@
 import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { FaPencilRuler, FaCode, FaRocket, FaSyncAlt } from 'react-icons/fa';
 
 const steps = [
   {
+    icon: <FaPencilRuler className="h-8 w-8 text-primary" />,
     title: "Conception",
     description: "Nous imaginons et planifions avec vous les fonctionnalités les plus à mêmes de répondre à vos problématiques métier."
   },
   {
+    icon: <FaCode className="h-8 w-8 text-primary" />,
     title: "Développement agile",
     description: "Applications web, mobile, outils d'automatisation... Nous mettons nos nombreux savoirs faire à votre service en itérant de manière agile tout au long du processus de développement."
   },
   {
+    icon: <FaRocket className="h-8 w-8 text-primary" />,
     title: "Déploiement",
     description: "Votre projet mis en ligne en un temps record, sur votre propre infrastructure ou nos serveurs dédiés sécurisés."
   },
   {
+    icon: <FaSyncAlt className="h-8 w-8 text-primary" />,
     title: "Évolution",
     description: "Un bon produit est un produit qui évolue. Nous demeurons à vos côtés sur toute la durée de votre projet pour assurer la maintenance et l'ajout de nouvelles fonctionnalités."
   }
@@ -74,39 +79,63 @@ const MethodePage = () => {
 
         <section className="py-24 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.8 }}
-              >
-                <img 
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop" 
-                  alt="Hiptown screenshot outil par Terros"
-                  className="rounded-lg shadow-2xl object-cover w-full"
-                />
-              </motion.div>
-              <motion.div
-                className="space-y-8"
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                {steps.map((step, index) => (
-                  <div key={index} className="flex items-start">
-                    <div className="flex-shrink-0 h-12 w-12 rounded-full bg-primary/10 text-primary flex items-center justify-center ring-8 ring-primary/5">
-                      <span className="text-xl font-bold">{index + 1}</span>
-                    </div>
-                    <div className="ml-6">
-                      <h3 className="text-xl font-bold text-secondary">{step.title}</h3>
-                      <p className="mt-2 text-gray-600">{step.description}</p>
+            <div className="grid md:grid-cols-2 gap-12">
+              {steps.map((step, index) => (
+                <motion.div
+                  key={index}
+                  className="flex"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.5, delay: index * 0.2 }}
+                >
+                  <div className="flex-shrink-0 mr-6">
+                    <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 text-primary">
+                      {step.icon}
                     </div>
                   </div>
-                ))}
-              </motion.div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-secondary">{step.title}</h3>
+                    <p className="mt-3 text-gray-600 leading-relaxed">{step.description}</p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
+          </div>
+        </section>
+        <section className="py-24 bg-gray-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.h2 
+              className="text-3xl md:text-4xl font-bold text-gray-900"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.8 }}
+            >
+              Prêt à démarrer votre projet ?
+            </motion.h2>
+            <motion.p 
+              className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              Contactez-nous pour discuter de vos idées et voir comment nous pouvons vous aider à les concrétiser.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <a 
+                href="#" 
+                className="mt-8 inline-block bg-primary text-white font-bold py-4 px-8 rounded-lg text-lg hover:bg-primary-dark transition-colors duration-300"
+              >
+                Nous contacter
+              </a>
+            </motion.div>
           </div>
         </section>
       </main>
