@@ -1,8 +1,29 @@
 import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { FiCode, FiMessageCircle, FiZap, FiCheck } from 'react-icons/fi';
+import { FiCode, FiMessageCircle, FiZap, FiCheck, FiArrowRight } from 'react-icons/fi';
 import { FaRobot, FaBook } from 'react-icons/fa';
+
+const features = [
+  {
+    icon: <FiCode className="w-8 h-8" />,
+    title: 'Interaction Directe avec le Code',
+    description: "Léo se connecte à votre dépôt Git pour lire et écrire du code, en comprenant l'ensemble du contexte de votre projet.",
+    delay: 0.2,
+  },
+  {
+    icon: <FiMessageCircle className="w-8 h-8" />,
+    title: 'Commandes en Langage Naturel',
+    description: 'Donnez vos instructions en français. Léo comprend vos exigences et les traduit en code.',
+    delay: 0.4,
+  },
+  {
+    icon: <FiZap className="w-8 h-8" />,
+    title: 'Flux de Travail Automatisé',
+    description: 'De la génération de code au déploiement, Léo accélère votre cycle de développement, permettant à votre équipe de se concentrer sur des défis plus importants.',
+    delay: 0.6,
+  },
+];
 
 const LeoPage = () => {
   return (
@@ -14,9 +35,9 @@ const LeoPage = () => {
           className="relative bg-cover bg-center text-white" 
           style={{ backgroundImage: "url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1600&auto=format&fit=crop')" }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-secondary/60 to-primary/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-primary/70 to-secondary/80"></div>
           <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-center min-h-screen pt-24 pb-20">
+            <div className="flex items-center justify-center min-h-[60vh] md:min-h-[70vh] pt-24 pb-20">
               <motion.div
                 className="text-center max-w-3xl mx-auto"
                 initial={{ opacity: 0, y: 20 }}
@@ -34,7 +55,7 @@ const LeoPage = () => {
           </div>
         </section>
 
-        <section className="bg-white py-24">
+        <section className="bg-gray-50 py-20">
             <div className="container mx-auto px-6 lg:px-8 text-center max-w-4xl">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -58,7 +79,7 @@ const LeoPage = () => {
         </section>
 
         {/* How it works section */}
-        <section className="py-24 bg-gray-50">
+        <section className="py-24 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               className="text-center mb-16"
@@ -73,7 +94,7 @@ const LeoPage = () => {
               </p>
             </motion.div>
 
-            <div className="grid lg:grid-cols-2 gap-x-16 gap-y-12 items-center mt-20">
+            <div className="grid lg:grid-cols-2 gap-x-16 gap-y-12 items-center mt-16">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -111,52 +132,29 @@ const LeoPage = () => {
               </motion.div>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8 mt-20 max-w-5xl mx-auto">
-              <motion.div
-                className="text-center p-8 bg-white rounded-xl transition-all duration-300 border border-gray-200 hover:border-primary/50 hover:shadow-xl hover:-translate-y-2"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
-                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 text-primary mx-auto mb-4">
-                  <FiCode className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900">Interaction Directe avec le Code</h3>
-                <p className="mt-2 text-gray-600">Léo se connecte à votre dépôt Git pour lire et écrire du code, en comprenant l'ensemble du contexte de votre projet.</p>
-              </motion.div>
-              <motion.div
-                className="text-center p-8 bg-white rounded-xl transition-all duration-300 border border-gray-200 hover:border-primary/50 hover:shadow-xl hover:-translate-y-2"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-              >
-                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 text-primary mx-auto mb-4">
-                  <FiMessageCircle className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900">Commandes en Langage Naturel</h3>
-                <p className="mt-2 text-gray-600">Donnez vos instructions en français. Léo comprend vos exigences et les traduit en code.</p>
-              </motion.div>
-              <motion.div
-                className="text-center p-8 bg-white rounded-xl transition-all duration-300 border border-gray-200 hover:border-primary/50 hover:shadow-xl hover:-translate-y-2"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.5, delay: 0.6 }}
-              >
-                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 text-primary mx-auto mb-4">
-                  <FiZap className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900">Flux de Travail Automatisé</h3>
-                <p className="mt-2 text-gray-600">De la génération de code au déploiement, Léo accélère votre cycle de développement, permettant à votre équipe de se concentrer sur des défis plus importants.</p>
-              </motion.div>
+            <div className="grid md:grid-cols-3 gap-8 mt-16 max-w-5xl mx-auto">
+              {features.map((feature) => (
+                <motion.div
+                  key={feature.title}
+                  className="text-center p-8 bg-gray-50 rounded-xl transition-all duration-300 border border-transparent hover:shadow-xl hover:-translate-y-2"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.5, delay: feature.delay }}
+                >
+                  <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 text-primary mx-auto mb-4">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900">{feature.title}</h3>
+                  <p className="mt-2 text-gray-600">{feature.description}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Key Features Section */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-x-20 gap-y-12 items-center">
               <motion.div
@@ -210,6 +208,42 @@ const LeoPage = () => {
                 </ul>
               </motion.div>
             </div>
+          </div>
+        </section>
+        {/* Final CTA Section */}
+        <section className="py-24 bg-primary">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.h2 
+              className="text-3xl md:text-4xl font-bold text-white"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.8 }}
+            >
+              Prêt à intégrer Léo dans votre équipe ?
+            </motion.h2>
+            <motion.p 
+              className="mt-4 text-lg text-white/90 max-w-2xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              Demandez votre accès anticipé dès aujourd'hui et révolutionnez votre workflow de développement.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <a 
+                href="#" 
+                className="mt-10 inline-flex items-center bg-white text-primary font-bold py-4 px-10 rounded-full text-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-xl"
+              >
+                Demander un accès anticipé <FiArrowRight className="ml-2" />
+              </a>
+            </motion.div>
           </div>
         </section>
       </main>
