@@ -71,7 +71,7 @@ const Team = () => {
                 </div>
                 <div className="p-6 text-center flex-grow flex flex-col justify-center">
                     <h3 className="text-xl font-bold text-gray-900">{member.name}</h3>
-                    <p className="text-sm text-indigo-600 font-semibold uppercase tracking-wider mt-1">{member.role}</p>
+                    <p className="text-sm text-[#58739c] font-semibold uppercase tracking-wider mt-1">{member.role}</p>
                 </div>
             </div>
             </SwiperSlide>
