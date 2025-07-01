@@ -3,13 +3,6 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { FiArrowRight, FiCheckCircle } from 'react-icons/fi';
 
-const summaryLinks = [
-  { name: "Notre champ d'action", href: '#champ-action' },
-  { name: 'La Plateformisation', href: '#plateformisation' },
-  { name: 'Ce qui nous différencie', href: '#differentiation' },
-  { name: 'Évolution technologique', href: '#technologie' },
-  { name: 'Nos expertises', href: '#expertises' },
-];
 
 const differentiators = [
     { title: 'Méthode de Gestion de Projet', description: 'Suivi rigoureux, supports internes dédiés.' },
@@ -84,22 +77,6 @@ const AgencePage = () => {
             </div>
         </section>
 
-        {/* Section 2 — Sommaire */}
-        <section className="py-6 bg-white/80 backdrop-blur-sm sticky top-24 z-40 shadow-sm hidden md:block border-y border-gray-200">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <nav className="flex justify-center space-x-4">
-                    {summaryLinks.map(link => (
-                        <a 
-                            key={link.name} 
-                            href={link.href}
-                            className="text-base font-medium text-gray-500 hover:text-primary transition-colors duration-300 px-4 py-2 rounded-full"
-                        >
-                            {link.name}
-                        </a>
-                    ))}
-                </nav>
-            </div>
-        </section>
 
         {/* Section 3 — Notre champ d’action */}
         <section id="champ-action" className="py-24 bg-gray-50">
