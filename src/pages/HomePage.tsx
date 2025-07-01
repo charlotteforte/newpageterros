@@ -8,6 +8,7 @@ import Testimonials from '@/components/Testimonials';
 import LeoFeature from '@/components/LeoFeature';
 import AgencyIntro from '@/components/AgencyIntro';
 import Team from '@/components/Team';
+import Newsletter from '@/components/Newsletter';
 
 const HomePage = () => {
   return (
@@ -22,6 +23,7 @@ const HomePage = () => {
         <LeoFeature />
         <Team />
         <AgencyIntro />
+        <Newsletter />
       </main>
       <Footer />
     </div>
