@@ -123,24 +123,26 @@ const MethodePage = () => {
                   Notre méthode de développement agile se découpe en 4 étapes successives : conception, développement, déploiement, évolution.
                 </p>
               </motion.div>
-              <motion.h2 
-                className="text-3xl md:text-5xl font-bold text-secondary tracking-tight"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.8 }}
-              >
-                Une approche structurée pour des résultats concrets
-              </motion.h2>
-              <motion.p 
-                className="mt-6 text-lg text-gray-600 leading-relaxed"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                Notre processus en 4 étapes garantit transparence, collaboration et excellence à chaque phase de votre projet.
-              </motion.p>
+              <div className="text-left">
+                <motion.h2 
+                  className="text-2xl md:text-4xl font-bold text-secondary tracking-tight"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.8 }}
+                >
+                  Une approche structurée pour des résultats concrets
+                </motion.h2>
+                <motion.p 
+                  className="mt-4 text-base text-gray-600 leading-relaxed"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                >
+                  Notre processus en 4 étapes garantit transparence, collaboration et excellence à chaque phase de votre projet.
+                </motion.p>
+              </div>
             </div>
 
             <motion.div 
