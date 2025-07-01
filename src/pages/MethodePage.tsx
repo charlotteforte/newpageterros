@@ -109,6 +109,20 @@ const MethodePage = () => {
         <section className="py-20 md:py-32 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
+              <motion.div
+                className="mb-12"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.8 }}
+              >
+                <h2 className="text-3xl md:text-4xl font-bold text-secondary tracking-tight">
+                  Développer une plateforme ou application sur mesure : mode d’emploi
+                </h2>
+                <p className="mt-4 text-lg text-gray-600 leading-relaxed">
+                  Notre méthode de développement agile se découpe en 4 étapes successives : conception, développement, déploiement, évolution.
+                </p>
+              </motion.div>
               <motion.h2 
                 className="text-3xl md:text-5xl font-bold text-secondary tracking-tight"
                 initial={{ opacity: 0, y: 20 }}
