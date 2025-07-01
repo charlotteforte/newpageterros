@@ -23,7 +23,7 @@ const Newsletter = () => {
               href="#"
               className="inline-flex items-center justify-center bg-primary hover:bg-primary-focus text-white font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg w-full"
             >
-              <span>Planifier un appel</span>
+              <span>Contactez-nous</span>
               <FiArrowRight className="ml-2" />
             </a>
           </div>
