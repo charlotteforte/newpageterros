@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { FaPencilRuler, FaCode, FaRocket, FaSyncAlt, FaUsers, FaListAlt, FaBullseye } from 'react-icons/fa';
+import { FiArrowRight } from 'react-icons/fi';
 
 const steps = [
   {
@@ -52,7 +53,7 @@ const MethodePage = () => {
         >
           <div className="absolute inset-0 bg-black/60"></div>
           <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-center min-h-[60vh] pt-40 pb-20">
+            <div className="flex items-center justify-center min-h-[70vh] pt-40 pb-20">
               <motion.div
                 className="text-center max-w-3xl mx-auto"
                 initial={{ opacity: 0, y: 20 }}
@@ -73,7 +74,7 @@ const MethodePage = () => {
           </div>
         </section>
 
-        <section className="py-24 bg-gray-50">
+        <section className="py-32 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-4xl mx-auto">
               <motion.h2 
@@ -98,7 +99,7 @@ const MethodePage = () => {
           </div>
         </section>
 
-        <section className="py-24 bg-white">
+        <section className="py-32 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               <div className="relative">
@@ -130,7 +131,7 @@ const MethodePage = () => {
           </div>
         </section>
 
-        <section className="py-24 bg-gray-50">
+        <section className="py-32 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-4xl mx-auto mb-20">
               <motion.h2 
@@ -191,7 +192,7 @@ const MethodePage = () => {
           </div>
         </section>
 
-        <section className="py-24 bg-white">
+        <section className="py-32 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <motion.div
@@ -223,7 +224,7 @@ const MethodePage = () => {
           </div>
         </section>
         
-        <section className="py-24 bg-gray-50">
+        <section className="py-32 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.h2 
               className="text-3xl md:text-4xl font-bold text-gray-900"
@@ -251,9 +252,9 @@ const MethodePage = () => {
             >
               <a 
                 href="#" 
-                className="mt-8 inline-block bg-primary text-white font-bold py-4 px-8 rounded-lg text-lg hover:bg-primary-dark transition-colors duration-300"
+                className="mt-8 inline-flex items-center bg-primary text-white font-bold py-4 px-8 rounded-lg text-lg hover:bg-primary-focus transition-all duration-300 transform hover:scale-105"
               >
-                Nous contacter
+                Nous contacter <FiArrowRight className="ml-2" />
               </a>
             </motion.div>
           </div>
