@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 import { 
     FiGitMerge,
     FiCreditCard, FiUsers, FiBriefcase, FiFileText, FiMail, 
-    FiShoppingCart, FiCpu, FiMessageSquare, FiKey, FiTrendingUp 
+    FiShoppingCart, FiCpu, FiMessageSquare, FiKey, FiTrendingUp, FiArrowRight
 } from 'react-icons/fi';
 
 const integrations = [
@@ -30,10 +30,10 @@ const IntegrationPage = () => {
       <main>
         {/* Hero Section */}
         <section
-          className="relative flex items-center justify-center text-center bg-cover bg-center min-h-[50vh]"
+          className="relative flex items-center justify-center text-center bg-cover bg-center min-h-[60vh] md:min-h-[70vh]"
           style={{ backgroundImage: "url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}
         >
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-primary/70 to-secondary/80" />
           <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               className="max-w-4xl mx-auto"
@@ -41,7 +41,7 @@ const IntegrationPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+              <h1 className="text-5xl md:text-7xl font-extrabold text-white tracking-tighter">
                 Intégration de Systèmes et d'APIs
               </h1>
               <p className="mt-6 text-lg text-gray-200 max-w-2xl mx-auto">
@@ -61,10 +61,8 @@ const IntegrationPage = () => {
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 0.8 }}
               >
-                <div className="flex items-center text-primary mb-4">
-                  <FiGitMerge className="w-8 h-8 mr-3" />
-                  <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Ne pas réinventer la roue</h2>
-                </div>
+                <div className="uppercase text-primary font-bold tracking-wider mb-2">Notre Philosophie</div>
+                <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-6">Ne pas réinventer la roue</h2>
                 <p className="text-lg text-gray-600 leading-relaxed mb-4">
                   Le métier de développeur a beaucoup changé depuis les débuts d’internet. Dans les années 2000, il fallait quasiment tout créer soi-même pour atteindre le résultat escompté.
                 </p>
@@ -99,6 +97,7 @@ const IntegrationPage = () => {
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.8 }}
             >
+              <div className="uppercase text-primary font-bold tracking-wider mb-2">Nos Partenaires Technologiques</div>
               <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Galerie d'intégrations</h2>
               <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
                 Explorez certaines des intégrations que nous maîtrisons pour construire des solutions puissantes et évolutives.
@@ -109,7 +108,7 @@ const IntegrationPage = () => {
               {integrations.map((integration, index) => (
                 <motion.div
                   key={integration.name}
-                  className="bg-white rounded-xl shadow-lg group text-center p-8 flex flex-col items-center justify-center h-56 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+                  className="bg-white rounded-xl group text-center p-8 flex flex-col items-center justify-center h-56 transition-all duration-300 border border-gray-200/80 hover:shadow-xl hover:-translate-y-2"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
@@ -123,6 +122,43 @@ const IntegrationPage = () => {
                 </motion.div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Final Section — Call to Action */}
+        <section className="py-24 bg-primary">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.h2 
+              className="text-3xl md:text-4xl font-bold text-white"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.8 }}
+            >
+              Prêt à connecter vos systèmes ?
+            </motion.h2>
+            <motion.p 
+              className="mt-4 text-lg text-white/90 max-w-2xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              Discutons de la manière dont nous pouvons intégrer les meilleurs outils pour optimiser vos processus.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <a 
+                href="#" 
+                className="mt-10 inline-flex items-center bg-white text-primary font-bold py-4 px-10 rounded-full text-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-xl"
+              >
+                Nous contacter <FiArrowRight className="ml-2" />
+              </a>
+            </motion.div>
           </div>
         </section>
 
