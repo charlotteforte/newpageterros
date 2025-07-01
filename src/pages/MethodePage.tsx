@@ -83,18 +83,22 @@ const MethodePage = () => {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="bg-primary-light">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-40">
+        <section 
+          className="relative bg-cover bg-center text-white"
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop')" }}
+        >
+          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-40">
             <motion.div
               className="text-center max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter text-secondary">
+              <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter text-white">
                 Notre Méthode : De l'Idée au Succès Digital
               </h1>
-              <p className="mt-6 text-lg md:text-xl text-accent-light max-w-2xl mx-auto">
+              <p className="mt-6 text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
                 Nous combinons agilité, expertise technique et vision produit pour construire des solutions sur-mesure qui génèrent un impact réel.
               </p>
             </motion.div>
