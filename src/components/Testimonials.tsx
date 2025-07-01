@@ -33,9 +33,12 @@ const Testimonials = () => {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-extrabold text-secondary tracking-tight">Ce que disent nos clients</h2>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-secondary tracking-tight">Ils parlent de nous</h2>
             <p className="mt-4 max-w-3xl mx-auto text-lg text-accent-DEFAULT">
-              Découvrez comment nous avons aidé des entreprises comme la vôtre à atteindre leurs objectifs.
+              Nous accompagnons plus de 50 clients startups, PME et grands groupes dans la mise en place de projets numériques variés.
+            </p>
+            <p className="mt-4 max-w-3xl mx-auto text-lg text-accent-DEFAULT">
+              Applications Web et Mobile, outils d'automatisation et de prospection et APIs sur mesure font partie de nos spécialités.
             </p>
           </motion.div>
 
