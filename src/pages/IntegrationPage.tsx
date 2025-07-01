@@ -29,33 +29,25 @@ const IntegrationPage = () => {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="py-24 bg-gray-50">
-          <div className="container mx-auto px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-x-16 gap-y-12 items-center">
-              <motion.div
-                className="text-center lg:text-left"
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.7 }}
-              >
-                <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">Intégration de Systèmes et d'APIs</h1>
-                <p className="mt-6 text-lg text-gray-600">
-                  Nous connectons vos applications à un écosystème de services pour automatiser et améliorer vos opérations.
-                </p>
-              </motion.div>
-              <motion.div
-                className="flex justify-center"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.7, delay: 0.2 }}
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1614036125197-3b2d28574168?auto=format&fit=crop&w=1200&q=80"
-                  alt="Illustration de connexions API et d'intégration de systèmes"
-                  className="rounded-xl shadow-2xl w-full max-w-md"
-                />
-              </motion.div>
-            </div>
+        <section
+          className="relative flex items-center justify-center text-center bg-cover bg-center min-h-[50vh]"
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}
+        >
+          <div className="absolute inset-0 bg-black/60" />
+          <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              className="max-w-4xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+                Intégration de Systèmes et d'APIs
+              </h1>
+              <p className="mt-6 text-lg text-gray-200 max-w-2xl mx-auto">
+                Nous connectons vos applications à un écosystème de services pour automatiser et améliorer vos opérations.
+              </p>
+            </motion.div>
           </div>
         </section>
 
