@@ -45,6 +45,14 @@ const Header = () => {
               </Link>
             ))}
           </nav>
+          <div className="hidden md:flex items-center ml-10">
+              <Link
+                  to="#"
+                  className={`px-5 py-2 rounded-full font-semibold transition-all duration-300 ${hasScrolled ? 'bg-primary text-white hover:bg-primary-focus' : 'bg-white text-primary hover:bg-gray-200'}`}
+              >
+                  Contactez-nous
+              </Link>
+          </div>
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -76,6 +84,13 @@ const Header = () => {
                   {link.name}
                 </Link>
               ))}
+              <Link
+                to="#"
+                className="block w-full text-center mt-4 px-3 py-3 rounded-md text-lg font-medium text-white bg-primary hover:bg-primary-focus"
+                onClick={() => setIsOpen(false)}
+              >
+                Contactez-nous
+              </Link>
             </div>
           </motion.div>
         )}

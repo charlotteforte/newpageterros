@@ -24,14 +24,17 @@ const LeoPage = () => {
                 transition={{ duration: 0.8 }}
               >
                 <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter">
-                  Leo, le premier développeur IA 100% français 🇫🇷
+                  Voici Leo, votre nouveau développeur IA.
                 </h1>
+                <p className="mt-6 text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+                  Intégrez un membre d'équipe autonome qui écrit, déploie et maintient votre code.
+                </p>
               </motion.div>
             </div>
           </div>
         </section>
 
-        <section className="bg-white py-20">
+        <section className="bg-white py-24">
             <div className="container mx-auto px-6 lg:px-8 text-center max-w-4xl">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -82,13 +85,13 @@ const LeoPage = () => {
                     <li className="flex items-start">
                         <FiCheck className="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" />
                         <span className="text-lg text-gray-600">
-                            <strong>Interaction directe :</strong> Léo se connecte à votre base de code pour comprendre, modifier et déployer des fonctionnalités.
+                            <strong>Interaction directe :</strong> Léo se connecte à votre repo pour comprendre le contexte, modifier le code et déployer des fonctionnalités.
                         </span>
                     </li>
                     <li className="flex items-start">
                         <FiCheck className="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0" />
                         <span className="text-lg text-gray-600">
-                            <strong>Développement autonome :</strong> Il peut lire, écrire et soumettre du code sur demande, accélérant ainsi votre flux de travail.
+                            <strong>Développement autonome :</strong> Il lit, écrit et soumet du code sur demande, comme un membre de votre équipe.
                         </span>
                     </li>
                 </ul>

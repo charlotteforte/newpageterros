@@ -41,10 +41,10 @@ const AgencePage = () => {
                 transition={{ duration: 0.8 }}
               >
                 <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter text-white">
-                  Une agence qui transforme vos idées en réalité
+                  Créateurs d'expériences numériques sur mesure.
                 </h1>
                 <p className="mt-6 text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-                  Nous sommes une agence de développement sur mesure, spécialisée dans la création de plateformes, applications et sites web performants.
+                  De la startup audacieuse à l'entreprise établie, nous transformons vos idées en plateformes, applications et sites web performants.
                 </p>
               </motion.div>
             </div>
@@ -52,7 +52,7 @@ const AgencePage = () => {
         </section>
 
         {/* Section 1 — Une agence de développement sur mesure */}
-        <section className="py-32 bg-white">
+        <section className="py-24 bg-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-x-24 gap-y-16 items-center">
                     <motion.div
@@ -102,7 +102,7 @@ const AgencePage = () => {
         </section>
 
         {/* Section 3 — Notre champ d’action */}
-        <section id="champ-action" className="py-32 bg-gray-50">
+        <section id="champ-action" className="py-24 bg-gray-50">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-x-24 gap-y-16 items-center">
                     <motion.div
@@ -137,7 +137,7 @@ const AgencePage = () => {
         </section>
 
         {/* Section 4 — La Plateformisation */}
-        <section id="plateformisation" className="py-32 bg-white">
+        <section id="plateformisation" className="py-24 bg-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-x-16 gap-y-12 items-center">
                     <motion.div
@@ -172,7 +172,7 @@ const AgencePage = () => {
         </section>
 
         {/* Section 5 — Ce qui nous différencie */}
-        <section id="differentiation" className="py-32 bg-gray-50">
+        <section id="differentiation" className="py-24 bg-gray-50">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-x-24 gap-y-16 items-center">
                     <motion.div
@@ -199,8 +199,10 @@ const AgencePage = () => {
                         <div className="space-y-6">
                             {differentiators.map(item => (
                                 <div key={item.title} className="bg-white rounded-xl p-6 flex items-start transition-all duration-300 shadow-lg hover:shadow-primary/20 hover:-translate-y-1">
-                                    <FiCheckCircle className="h-8 w-8 text-primary mt-1 flex-shrink-0" />
-                                    <div className="ml-5">
+                                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                                        <FiCheckCircle className="h-6 w-6 text-primary" />
+                                    </div>
+                                    <div className="ml-6">
                                         <h3 className="text-xl font-bold text-gray-900">{item.title}</h3>
                                         <p className="mt-1 text-gray-600">{item.description}</p>
                                     </div>
@@ -213,7 +215,7 @@ const AgencePage = () => {
         </section>
 
         {/* Section 6 — L’Évolution Technologique */}
-        <section id="technologie" className="py-32 bg-white">
+        <section id="technologie" className="py-24 bg-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-x-24 gap-y-16 items-center">
                     <motion.div
@@ -248,7 +250,7 @@ const AgencePage = () => {
         </section>
 
         {/* Nos expertises */}
-        <section id="expertises" className="py-32 bg-gray-50">
+        <section id="expertises" className="py-24 bg-gray-50">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center max-w-4xl mx-auto">
                     <motion.h2 
@@ -285,7 +287,7 @@ const AgencePage = () => {
         </section>
 
         {/* Final Section — Call to Action */}
-        <section className="py-32 bg-white">
+        <section className="py-24 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.h2 
               className="text-3xl md:text-4xl font-bold text-gray-900"
