@@ -30,7 +30,7 @@ const LeoPage = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1620712943543-95fc69614534?q=80&w=1600&auto=format&fit=crop"
+                  src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1600&auto=format&fit=crop"
                   alt="Illustration d'un robot IA travaillant sur un ordinateur"
                   className="rounded-2xl shadow-2xl w-full max-w-md"
                 />
