@@ -16,7 +16,7 @@ const TrustedBy = () => {
   return (
     <section className="py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h3 className="text-center text-base font-semibold text-gray-500 uppercase tracking-wider mb-12">
+        <h3 className="text-center text-lg font-semibold text-gray-500 uppercase tracking-wider mb-12">
           Ils nous font confiance
         </h3>
         <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
