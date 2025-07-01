@@ -31,20 +31,20 @@ const AgencePage = () => {
           className="relative bg-cover bg-center text-white" 
           style={{ backgroundImage: "url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1332&auto=format&fit=crop')" }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-secondary/70 via-primary/60 to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-secondary/70 to-black/80"></div>
           <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-center min-h-[80vh] pt-40 pb-20">
               <motion.div
-                className="text-center max-w-3xl mx-auto"
+                className="text-center max-w-4xl mx-auto"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-white">
-                  À propos de Terros
+                <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter text-white">
+                  Une agence qui transforme vos idées en réalité
                 </h1>
-                <p className="mt-6 text-xl text-white max-w-2xl mx-auto">
-                  Nous sommes une agence de création de sites, plateformes et applications Web, Mobile et Data.
+                <p className="mt-6 text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+                  Nous sommes une agence de développement sur mesure, spécialisée dans la création de plateformes, applications et sites web performants.
                 </p>
               </motion.div>
             </div>
@@ -61,9 +61,10 @@ const AgencePage = () => {
                         viewport={{ once: true, amount: 0.5 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-6">Une agence de développement sur mesure</h2>
+                        <div className="uppercase text-primary font-bold tracking-wider mb-2">Notre approche</div>
+                        <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-6">Un partenaire technologique, pas seulement un fournisseur</h2>
                         <p className="text-lg text-gray-600 leading-relaxed">
-                            Notre expertise en création de solutions technologiques sur mesure nous permet de répondre aux besoins diversifiés de nos clients, allant des startups en pleine croissance aux grandes entreprises générant plus de 1 milliard d'euros de revenus. Nous collaborons également avec des entreprises internationales pour fournir des solutions de classe mondiale.
+                            Nous répondons aux besoins de clients variés, des startups aux grandes entreprises internationales. Notre force réside dans notre capacité à fournir des solutions sur mesure qui génèrent une valeur commerciale tangible.
                         </p>
                     </motion.div>
                     <motion.div
@@ -193,12 +194,13 @@ const AgencePage = () => {
                         viewport={{ once: true, amount: 0.5 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
                     >
+                        <div className="uppercase text-primary font-bold tracking-wider mb-2">Notre valeur ajoutée</div>
                         <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-8">Ce qui nous différencie</h2>
                         <div className="space-y-6">
                             {differentiators.map(item => (
-                                <div key={item.title} className="bg-white rounded-lg p-6 flex items-start transform hover:-translate-y-1 transition-transform duration-300 shadow-md hover:shadow-xl">
-                                    <FiCheckCircle className="h-7 w-7 text-primary mt-1 flex-shrink-0" />
-                                    <div className="ml-4">
+                                <div key={item.title} className="bg-white rounded-xl p-6 flex items-start transition-all duration-300 shadow-lg hover:shadow-primary/20 hover:-translate-y-1">
+                                    <FiCheckCircle className="h-8 w-8 text-primary mt-1 flex-shrink-0" />
+                                    <div className="ml-5">
                                         <h3 className="text-xl font-bold text-gray-900">{item.title}</h3>
                                         <p className="mt-1 text-gray-600">{item.description}</p>
                                     </div>
@@ -268,7 +270,7 @@ const AgencePage = () => {
                         {expertises.map((expertise, index) => (
                             <motion.div
                                 key={expertise}
-                                className="bg-white text-secondary font-semibold px-5 py-3 rounded-full transition-all duration-300 hover:bg-primary hover:text-white cursor-pointer border hover:border-transparent border-gray-200 shadow-sm"
+                                className="bg-white text-secondary font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:bg-primary hover:text-white cursor-pointer border hover:border-transparent border-gray-200 shadow-lg hover:shadow-primary/30 transform hover:-translate-y-1"
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
@@ -311,7 +313,7 @@ const AgencePage = () => {
             >
               <a 
                 href="#" 
-                className="mt-8 inline-flex items-center bg-primary text-white font-bold py-4 px-8 rounded-lg text-lg hover:bg-primary-focus transition-all duration-300 transform hover:scale-105"
+                className="mt-10 inline-flex items-center bg-primary text-white font-bold py-4 px-10 rounded-full text-lg hover:bg-primary-focus transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-primary/40"
               >
                 Nous contacter <FiArrowRight className="ml-2" />
               </a>

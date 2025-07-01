@@ -110,7 +110,7 @@ const LeoPage = () => {
 
             <div className="grid md:grid-cols-3 gap-8 mt-20 max-w-5xl mx-auto">
               <motion.div
-                className="text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
+                className="text-center p-8 bg-white rounded-xl shadow-xl hover:shadow-primary/20 transition-all duration-300 transform hover:-translate-y-1"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
@@ -123,7 +123,7 @@ const LeoPage = () => {
                 <p className="mt-2 text-gray-600">Léo se connecte à votre dépôt Git pour lire et écrire du code, en comprenant l'ensemble du contexte de votre projet.</p>
               </motion.div>
               <motion.div
-                className="text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
+                className="text-center p-8 bg-white rounded-xl shadow-xl hover:shadow-primary/20 transition-all duration-300 transform hover:-translate-y-1"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
@@ -136,7 +136,7 @@ const LeoPage = () => {
                 <p className="mt-2 text-gray-600">Donnez vos instructions en français. Léo comprend vos exigences et les traduit en code.</p>
               </motion.div>
               <motion.div
-                className="text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
+                className="text-center p-8 bg-white rounded-xl shadow-xl hover:shadow-primary/20 transition-all duration-300 transform hover:-translate-y-1"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
@@ -153,7 +153,7 @@ const LeoPage = () => {
         </section>
 
         {/* Key Features Section */}
-        <section className="py-24 bg-gray-50">
+        <section className="py-24 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-x-20 gap-y-12 items-center">
               <motion.div
@@ -175,11 +175,12 @@ const LeoPage = () => {
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 0.8 }}
               >
+                <div className="uppercase text-primary font-bold tracking-wider mb-2">Capacités</div>
                 <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-6">Fonctionnalités Clés</h2>
                 <ul className="space-y-8">
                   <li className="flex items-start">
                     <div className="flex-shrink-0">
-                      <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-primary text-white">
+                      <div className="flex items-center justify-center h-12 w-12 rounded-full bg-primary/10 text-primary">
                         <FaRobot className="h-6 w-6" />
                       </div>
                     </div>
@@ -192,7 +193,7 @@ const LeoPage = () => {
                   </li>
                   <li className="flex items-start">
                     <div className="flex-shrink-0">
-                      <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-primary text-white">
+                      <div className="flex items-center justify-center h-12 w-12 rounded-full bg-primary/10 text-primary">
                         <FaBook className="h-6 w-6" />
                       </div>
                     </div>
