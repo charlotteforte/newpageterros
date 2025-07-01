@@ -34,14 +34,15 @@ const Header = () => {
               Terros
             </Link>
           </div>
-          <nav className="hidden md:flex md:space-x-2">
+          <nav className="hidden md:flex md:space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.href}
-                className={`text-base font-medium transition-colors duration-300 px-4 py-2 rounded-lg ${hasScrolled ? 'text-accent-DEFAULT hover:text-primary-DEFAULT hover:bg-primary-light' : 'text-gray-200 hover:text-white hover:bg-white/10'}`}
+                className={`relative group text-base font-medium transition-colors duration-300 py-2 ${hasScrolled ? 'text-accent-DEFAULT hover:text-primary-DEFAULT' : 'text-gray-200 hover:text-white'}`}
               >
                 {link.name}
+                <span className={`absolute bottom-0 left-0 w-full h-0.5 ${hasScrolled ? 'bg-primary' : 'bg-white'} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out`}></span>
               </Link>
             ))}
           </nav>
