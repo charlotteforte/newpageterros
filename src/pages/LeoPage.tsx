@@ -24,7 +24,7 @@ const LeoPage = () => {
                 transition={{ duration: 0.8 }}
               >
                 <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter">
-                  Léo, le premier développeur IA made in France 🇫🇷
+                  Leo, le premier développeur IA 100% français 🇫🇷
                 </h1>
               </motion.div>
             </div>
