@@ -113,8 +113,8 @@ const AgencePage = () => {
                         transition={{ duration: 0.8 }}
                     >
                         <img 
-                            src="https://images.unsplash.com/photo-1559028006-44a36b17c365?q=80&w=1200&auto=format&fit=crop" 
-                            alt="Capture d'écran d'un article de blog sur un ordinateur portable"
+                            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1170&auto=format&fit=crop" 
+                            alt="Espace de travail de développement web et mobile avec un ordinateur portable, un téléphone et une tablette"
                             className="rounded-lg shadow-2xl object-cover max-w-lg w-full"
                         />
                     </motion.div>
