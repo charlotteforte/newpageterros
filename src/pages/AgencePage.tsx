@@ -31,9 +31,9 @@ const AgencePage = () => {
           className="relative bg-cover bg-center text-white" 
           style={{ backgroundImage: "url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1332&auto=format&fit=crop')" }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-secondary/70 to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-primary/60 to-secondary/70"></div>
           <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-center min-h-[80vh] pt-40 pb-20">
+            <div className="flex items-center justify-center min-h-screen pt-24 pb-20">
               <motion.div
                 className="text-center max-w-4xl mx-auto"
                 initial={{ opacity: 0, y: 20 }}
@@ -92,7 +92,7 @@ const AgencePage = () => {
                         <a 
                             key={link.name} 
                             href={link.href}
-                            className="text-base font-medium text-gray-600 hover:text-primary transition-colors duration-300 px-4 py-2 rounded-full hover:bg-gray-200"
+                            className="text-base font-medium text-gray-600 hover:text-white hover:bg-primary transition-all duration-300 px-4 py-2 rounded-full"
                         >
                             {link.name}
                         </a>
@@ -198,7 +198,7 @@ const AgencePage = () => {
                         <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-8">Ce qui nous différencie</h2>
                         <div className="space-y-6">
                             {differentiators.map(item => (
-                                <div key={item.title} className="bg-white rounded-xl p-6 flex items-start transition-all duration-300 shadow-lg hover:shadow-primary/20 hover:-translate-y-1">
+                                <div key={item.title} className="bg-white rounded-xl p-6 flex items-start transition-all duration-300 border border-transparent hover:border-primary/50 hover:shadow-xl hover:-translate-y-2">
                                     <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                                         <FiCheckCircle className="h-6 w-6 text-primary" />
                                     </div>
@@ -272,7 +272,7 @@ const AgencePage = () => {
                         {expertises.map((expertise, index) => (
                             <motion.div
                                 key={expertise}
-                                className="bg-white text-secondary font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:bg-primary hover:text-white cursor-pointer border hover:border-transparent border-gray-200 shadow-lg hover:shadow-primary/30 transform hover:-translate-y-1"
+                                className="bg-gray-100 text-secondary font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:bg-primary hover:text-white cursor-pointer transform hover:-translate-y-1"
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}

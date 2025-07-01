@@ -14,9 +14,9 @@ const LeoPage = () => {
           className="relative bg-cover bg-center text-white" 
           style={{ backgroundImage: "url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1600&auto=format&fit=crop')" }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-secondary/70 via-primary/60 to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-secondary/60 to-primary/70"></div>
           <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-center min-h-[80vh] pt-40 pb-20">
+            <div className="flex items-center justify-center min-h-screen pt-24 pb-20">
               <motion.div
                 className="text-center max-w-3xl mx-auto"
                 initial={{ opacity: 0, y: 20 }}
@@ -104,8 +104,8 @@ const LeoPage = () => {
                 transition={{ duration: 0.8 }}
               >
                  <img 
-                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" 
-                    alt="Tableau de bord présentant des graphiques d'analyse de données"
+                    src="https://images.unsplash.com/photo-1634733600138-cb502b48341f?q=80&w=1032&auto=format&fit=crop" 
+                    alt="Tableau de bord d'analyse de données avec un thème sombre"
                     className="rounded-lg shadow-2xl w-full max-w-lg"
                 />
               </motion.div>
@@ -113,7 +113,7 @@ const LeoPage = () => {
 
             <div className="grid md:grid-cols-3 gap-8 mt-20 max-w-5xl mx-auto">
               <motion.div
-                className="text-center p-8 bg-white rounded-xl shadow-xl hover:shadow-primary/20 transition-all duration-300 transform hover:-translate-y-1"
+                className="text-center p-8 bg-white rounded-xl transition-all duration-300 border border-gray-200 hover:border-primary/50 hover:shadow-xl hover:-translate-y-2"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
@@ -126,7 +126,7 @@ const LeoPage = () => {
                 <p className="mt-2 text-gray-600">Léo se connecte à votre dépôt Git pour lire et écrire du code, en comprenant l'ensemble du contexte de votre projet.</p>
               </motion.div>
               <motion.div
-                className="text-center p-8 bg-white rounded-xl shadow-xl hover:shadow-primary/20 transition-all duration-300 transform hover:-translate-y-1"
+                className="text-center p-8 bg-white rounded-xl transition-all duration-300 border border-gray-200 hover:border-primary/50 hover:shadow-xl hover:-translate-y-2"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
@@ -139,7 +139,7 @@ const LeoPage = () => {
                 <p className="mt-2 text-gray-600">Donnez vos instructions en français. Léo comprend vos exigences et les traduit en code.</p>
               </motion.div>
               <motion.div
-                className="text-center p-8 bg-white rounded-xl shadow-xl hover:shadow-primary/20 transition-all duration-300 transform hover:-translate-y-1"
+                className="text-center p-8 bg-white rounded-xl transition-all duration-300 border border-gray-200 hover:border-primary/50 hover:shadow-xl hover:-translate-y-2"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}

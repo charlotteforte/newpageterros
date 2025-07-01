@@ -39,9 +39,10 @@ const Header = () => {
               <Link
                 key={link.name}
                 to={link.href}
-                className={`text-base font-medium transition-colors duration-300 ${hasScrolled ? 'text-accent hover:text-primary' : 'text-gray-200 hover:text-white'}`}
+                className={`relative group text-base font-medium transition-colors duration-300 py-2 ${hasScrolled ? 'text-accent hover:text-primary' : 'text-gray-200 hover:text-white'}`}
               >
                 {link.name}
+                <span className={`absolute bottom-0 left-0 w-full h-0.5 ${hasScrolled ? 'bg-primary' : 'bg-white'} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out`}></span>
               </Link>
             ))}
           </nav>
