@@ -33,6 +33,17 @@ const teamMembers = [
 const Team = () => {
   return (
     <div className="bg-white py-20">
+      <style>
+        {`
+          .swiper-button-next,
+          .swiper-button-prev {
+            color: #58739c;
+          }
+          .swiper-pagination-bullet-active {
+            background: #58739c;
+          }
+        `}
+      </style>
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
           Team Terros
