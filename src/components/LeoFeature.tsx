@@ -29,7 +29,7 @@ const LeoFeature = () => {
             transition={{ duration: 0.8 }}
           >
             <img 
-              src="https://images.unsplash.com/photo-1620712943543-95fc69614534?q=80&w=1332&auto=format&fit=crop" 
+              src="https://images.unsplash.com/photo-1677756119517-756a188d2d94?q=80&w=1920&auto=format&fit=crop" 
               alt="AI Developer Robot"
               className="rounded-xl shadow-2xl object-cover w-full h-full max-h-[500px]"
             />
