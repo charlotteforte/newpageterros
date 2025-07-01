@@ -108,10 +108,11 @@ const MethodePage = () => {
         {/* Process Section */}
         <section className="py-20 md:py-32 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-24">
+            <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                className="text-left"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 0.8 }}
               >
@@ -121,6 +122,18 @@ const MethodePage = () => {
                 <p className="mt-4 text-lg text-gray-600 leading-relaxed">
                   Notre méthode de développement agile se découpe en 4 étapes successives : conception, développement, déploiement, évolution.
                 </p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                <img 
+                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1170&auto=format&fit=crop" 
+                  alt="Équipe travaillant sur un projet agile"
+                  className="rounded-xl shadow-xl object-cover w-full"
+                />
               </motion.div>
             </div>
             <div className="mb-16 md:mb-24">
