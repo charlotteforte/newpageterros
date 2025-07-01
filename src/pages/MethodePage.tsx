@@ -215,8 +215,8 @@ const MethodePage = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1554224155-8d04421cd6c3?q=80&w=1170&auto=format&fit=crop" 
-                  alt="Personne en train de budgétiser avec une calculatrice et des documents"
+                  src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1332&auto=format&fit=crop" 
+                  alt="Équipe planifiant un projet"
                   className="rounded-lg shadow-xl object-cover w-full"
                 />
               </motion.div>
