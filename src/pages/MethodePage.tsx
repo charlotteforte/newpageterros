@@ -219,7 +219,7 @@ const MethodePage = () => {
                 href="#" 
                 className="mt-10 inline-flex items-center bg-primary text-white font-bold py-4 px-10 rounded-lg text-lg hover:bg-primary-focus transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
-                Planifier un appel <FiArrowRight className="ml-3" />
+                Contactez-nous <FiArrowRight className="ml-3" />
               </a>
             </motion.div>
           </div>
