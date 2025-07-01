@@ -49,7 +49,7 @@ const Header = () => {
           <div className="hidden md:flex items-center ml-4">
               <Link
                   to="#"
-                  className={`px-5 py-2.5 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${hasScrolled ? 'bg-primary text-white hover:bg-primary-focus shadow-md' : 'bg-white text-primary hover:bg-gray-200'}`}
+                  className={`px-5 py-2.5 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 ${hasScrolled ? 'bg-primary text-white hover:bg-primary-focus shadow-md' : 'bg-white text-primary hover:bg-gray-200'}`}
               >
                   Contactez-nous
               </Link>
@@ -87,7 +87,7 @@ const Header = () => {
               ))}
               <Link
                 to="#"
-                className="block w-full text-center mt-4 px-4 py-3 rounded-lg text-base font-semibold text-white bg-primary hover:bg-primary-focus transition-colors duration-200"
+                className="block w-full text-center mt-4 px-4 py-3 rounded-full text-base font-semibold text-white bg-primary hover:bg-primary-focus transition-colors duration-200"
                 onClick={() => setIsOpen(false)}
               >
                 Contactez-nous
