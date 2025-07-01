@@ -1,7 +1,6 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const teamMembers = [
   {
@@ -33,7 +32,7 @@ const teamMembers = [
 
 const Team = () => {
   return (
-    <div className="bg-gray-50 py-20">
+    <div className="bg-white py-20">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
           Team Terros
@@ -65,30 +64,15 @@ const Team = () => {
             className="pb-16"
         >
           {teamMembers.map((member, index) => (
-            <SwiperSlide key={index} className="h-full">
-               <div className="text-center bg-white p-8 rounded-lg shadow-lg h-full flex flex-col justify-center items-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-                <img className="mx-auto mb-4 w-36 h-36 rounded-full object-cover ring-4 ring-gray-200" src={member.imageUrl} alt={member.name} />
-                <h3 className="mb-1 text-xl font-bold tracking-tight text-gray-900">
-                    {member.name}
-                </h3>
-                <p className="text-gray-500">{member.role}</p>
-                <ul className="flex justify-center mt-4 space-x-4">
-                    <li>
-                        <a href="#" className="text-gray-400 hover:text-blue-500">
-                            <FaLinkedin className="w-5 h-5" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" className="text-gray-400 hover:text-sky-500">
-                            <FaTwitter className="w-5 h-5" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" className="text-gray-400 hover:text-gray-900">
-                            <FaGithub className="w-5 h-5" />
-                        </a>
-                    </li>
-                </ul>
+            <SwiperSlide key={index} className="h-full pb-4">
+               <div className="bg-white rounded-lg shadow-md overflow-hidden h-full flex flex-col group transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                <div className="relative pt-[100%]">
+                    <img className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" src={member.imageUrl} alt={member.name} />
+                </div>
+                <div className="p-6 text-center flex-grow flex flex-col justify-center">
+                    <h3 className="text-xl font-bold text-gray-900">{member.name}</h3>
+                    <p className="text-sm text-indigo-600 font-semibold uppercase tracking-wider mt-1">{member.role}</p>
+                </div>
             </div>
             </SwiperSlide>
           ))}
