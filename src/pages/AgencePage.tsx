@@ -31,9 +31,9 @@ const AgencePage = () => {
           className="relative bg-cover bg-center text-white" 
           style={{ backgroundImage: "url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1332&auto=format&fit=crop')" }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-primary/60 to-secondary/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-primary/70 to-secondary/80"></div>
           <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-center min-h-screen pt-24 pb-20">
+            <div className="flex items-center justify-center min-h-[60vh] md:min-h-[70vh] pt-24 pb-20">
               <motion.div
                 className="text-center max-w-4xl mx-auto"
                 initial={{ opacity: 0, y: 20 }}
@@ -92,7 +92,7 @@ const AgencePage = () => {
                         <a 
                             key={link.name} 
                             href={link.href}
-                            className="text-base font-medium text-gray-600 hover:text-white hover:bg-primary transition-all duration-300 px-4 py-2 rounded-full"
+                            className="text-base font-medium text-gray-500 hover:text-primary transition-colors duration-300 px-4 py-2 rounded-full"
                         >
                             {link.name}
                         </a>
@@ -174,43 +174,36 @@ const AgencePage = () => {
         {/* Section 5 — Ce qui nous différencie */}
         <section id="differentiation" className="py-24 bg-gray-50">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid lg:grid-cols-2 gap-x-24 gap-y-16 items-center">
-                    <motion.div
-                        className="flex justify-center"
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, amount: 0.5 }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <img 
-                            src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=1170&auto=format&fit=crop" 
-                            alt="Page d'accueil du site web Domaines Ott par Terros affichée sur un écran"
-                            className="rounded-lg shadow-2xl object-cover max-w-lg w-full"
-                        />
-                    </motion.div>
-                    <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, amount: 0.5 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                    >
-                        <div className="uppercase text-primary font-bold tracking-wider mb-2">Notre valeur ajoutée</div>
-                        <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-8">Ce qui nous différencie</h2>
-                        <div className="space-y-6">
-                            {differentiators.map(item => (
-                                <div key={item.title} className="bg-white rounded-xl p-6 flex items-start transition-all duration-300 border border-transparent hover:border-primary/50 hover:shadow-xl hover:-translate-y-2">
-                                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                                        <FiCheckCircle className="h-6 w-6 text-primary" />
-                                    </div>
-                                    <div className="ml-6">
-                                        <h3 className="text-xl font-bold text-gray-900">{item.title}</h3>
-                                        <p className="mt-1 text-gray-600">{item.description}</p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </motion.div>
+                <div className="text-center max-w-4xl mx-auto">
+                    <div className="uppercase text-primary font-bold tracking-wider mb-2">Notre valeur ajoutée</div>
+                    <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-12">Ce qui nous différencie</h2>
                 </div>
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ staggerChildren: 0.2 }}
+                    className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+                >
+                    {differentiators.map(item => (
+                        <motion.div 
+                            key={item.title} 
+                            className="bg-white rounded-xl p-8 flex flex-col text-center items-center transition-all duration-300 border border-gray-200 hover:shadow-xl hover:-translate-y-2"
+                            variants={{
+                                hidden: { opacity: 0, y: 20 },
+                                visible: { opacity: 1, y: 0 }
+                            }}
+                        >
+                            <div className="flex-shrink-0 w-16 h-16 mb-6 rounded-full bg-primary/10 flex items-center justify-center">
+                                <FiCheckCircle className="h-8 w-8 text-primary" />
+                            </div>
+                            <div>
+                                <h3 className="text-xl font-bold text-gray-900">{item.title}</h3>
+                                <p className="mt-2 text-gray-600">{item.description}</p>
+                            </div>
+                        </motion.div>
+                    ))}
+                </motion.div>
             </div>
         </section>
 
@@ -272,7 +265,7 @@ const AgencePage = () => {
                         {expertises.map((expertise, index) => (
                             <motion.div
                                 key={expertise}
-                                className="bg-gray-100 text-secondary font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:bg-primary hover:text-white cursor-pointer transform hover:-translate-y-1"
+                                className="bg-white text-gray-700 font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:bg-primary hover:text-white cursor-pointer shadow-sm border border-gray-200 transform hover:-translate-y-1"
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
@@ -287,10 +280,10 @@ const AgencePage = () => {
         </section>
 
         {/* Final Section — Call to Action */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-primary">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.h2 
-              className="text-3xl md:text-4xl font-bold text-gray-900"
+              className="text-3xl md:text-4xl font-bold text-white"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
@@ -299,7 +292,7 @@ const AgencePage = () => {
               Prêt à transformer votre vision en réalité ?
             </motion.h2>
             <motion.p 
-              className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto"
+              className="mt-4 text-lg text-white/90 max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
@@ -315,7 +308,7 @@ const AgencePage = () => {
             >
               <a 
                 href="#" 
-                className="mt-10 inline-flex items-center bg-primary text-white font-bold py-4 px-10 rounded-full text-lg hover:bg-primary-focus transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-primary/40"
+                className="mt-10 inline-flex items-center bg-white text-primary font-bold py-4 px-10 rounded-full text-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-xl"
               >
                 Nous contacter <FiArrowRight className="ml-2" />
               </a>
