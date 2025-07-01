@@ -167,8 +167,8 @@ const LeoPage = () => {
                 transition={{ duration: 0.8 }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1620712943543-95fc69634367?q=80&w=1300&auto=format&fit=crop"
-                  alt="IA apprenant et évoluant"
+                  src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?q=80&w=1148&auto=format&fit=crop"
+                  alt="Robot lisant un livre, symbolisant l'apprentissage de l'IA"
                   className="rounded-xl shadow-2xl w-full max-w-lg"
                 />
               </motion.div>
