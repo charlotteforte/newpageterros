@@ -31,9 +31,9 @@ const AgencePage = () => {
           className="relative bg-cover bg-center text-white" 
           style={{ backgroundImage: "url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1332&auto=format&fit=crop')" }}
         >
-          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-secondary/70 via-primary/60 to-black/80"></div>
           <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-center min-h-[70vh] pt-40 pb-20">
+            <div className="flex items-center justify-center min-h-[80vh] pt-40 pb-20">
               <motion.div
                 className="text-center max-w-3xl mx-auto"
                 initial={{ opacity: 0, y: 20 }}
@@ -52,7 +52,7 @@ const AgencePage = () => {
         </section>
 
         {/* Section 1 — Une agence de développement sur mesure */}
-        <section className="py-32 bg-gray-50">
+        <section className="py-32 bg-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-x-24 gap-y-16 items-center">
                     <motion.div
@@ -86,12 +86,12 @@ const AgencePage = () => {
         {/* Section 2 — Sommaire */}
         <section className="py-6 bg-white/80 backdrop-blur-sm sticky top-24 z-40 shadow-sm hidden md:block border-y border-gray-200">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <nav className="flex justify-center space-x-8">
+                <nav className="flex justify-center space-x-4">
                     {summaryLinks.map(link => (
                         <a 
                             key={link.name} 
                             href={link.href}
-                            className="text-base font-medium text-gray-600 hover:text-primary transition-colors duration-300"
+                            className="text-base font-medium text-gray-600 hover:text-primary transition-colors duration-300 px-4 py-2 rounded-full hover:bg-gray-200"
                         >
                             {link.name}
                         </a>
@@ -101,7 +101,7 @@ const AgencePage = () => {
         </section>
 
         {/* Section 3 — Notre champ d’action */}
-        <section id="champ-action" className="py-32 bg-white">
+        <section id="champ-action" className="py-32 bg-gray-50">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-x-24 gap-y-16 items-center">
                     <motion.div
@@ -136,7 +136,7 @@ const AgencePage = () => {
         </section>
 
         {/* Section 4 — La Plateformisation */}
-        <section id="plateformisation" className="py-32 bg-gray-100">
+        <section id="plateformisation" className="py-32 bg-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-x-16 gap-y-12 items-center">
                     <motion.div
@@ -171,7 +171,7 @@ const AgencePage = () => {
         </section>
 
         {/* Section 5 — Ce qui nous différencie */}
-        <section id="differentiation" className="py-32 bg-white">
+        <section id="differentiation" className="py-32 bg-gray-50">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-x-24 gap-y-16 items-center">
                     <motion.div
@@ -196,7 +196,7 @@ const AgencePage = () => {
                         <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-8">Ce qui nous différencie</h2>
                         <div className="space-y-6">
                             {differentiators.map(item => (
-                                <div key={item.title} className="bg-gray-50 rounded-lg p-6 flex items-start transform hover:-translate-y-1 transition-transform duration-300">
+                                <div key={item.title} className="bg-white rounded-lg p-6 flex items-start transform hover:-translate-y-1 transition-transform duration-300 shadow-md hover:shadow-xl">
                                     <FiCheckCircle className="h-7 w-7 text-primary mt-1 flex-shrink-0" />
                                     <div className="ml-4">
                                         <h3 className="text-xl font-bold text-gray-900">{item.title}</h3>
@@ -211,7 +211,7 @@ const AgencePage = () => {
         </section>
 
         {/* Section 6 — L’Évolution Technologique */}
-        <section id="technologie" className="py-32 bg-gray-50">
+        <section id="technologie" className="py-32 bg-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-x-24 gap-y-16 items-center">
                     <motion.div
@@ -246,7 +246,7 @@ const AgencePage = () => {
         </section>
 
         {/* Nos expertises */}
-        <section id="expertises" className="py-32 bg-white">
+        <section id="expertises" className="py-32 bg-gray-50">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center max-w-4xl mx-auto">
                     <motion.h2 
@@ -268,7 +268,7 @@ const AgencePage = () => {
                         {expertises.map((expertise, index) => (
                             <motion.div
                                 key={expertise}
-                                className="bg-gray-100 text-secondary font-semibold px-5 py-3 rounded-full transition-colors duration-300 hover:bg-primary hover:text-white cursor-pointer"
+                                className="bg-white text-secondary font-semibold px-5 py-3 rounded-full transition-all duration-300 hover:bg-primary hover:text-white cursor-pointer border hover:border-transparent border-gray-200 shadow-sm"
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
@@ -283,7 +283,7 @@ const AgencePage = () => {
         </section>
 
         {/* Final Section — Call to Action */}
-        <section className="py-32 bg-gray-50">
+        <section className="py-32 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.h2 
               className="text-3xl md:text-4xl font-bold text-gray-900"

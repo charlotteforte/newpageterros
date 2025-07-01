@@ -14,7 +14,7 @@ const TrustedBy = () => {
   const duplicatedLogos = [...logos, ...logos];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h3 className="text-center text-lg font-medium text-accent uppercase tracking-widest mb-12">
           Ils nous font confiance

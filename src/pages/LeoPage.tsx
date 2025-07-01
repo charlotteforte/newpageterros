@@ -14,9 +14,9 @@ const LeoPage = () => {
           className="relative bg-cover bg-center text-white" 
           style={{ backgroundImage: "url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1600&auto=format&fit=crop')" }}
         >
-          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-secondary/70 via-primary/60 to-black/80"></div>
           <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-center min-h-[60vh] pt-40 pb-20">
+            <div className="flex items-center justify-center min-h-[80vh] pt-40 pb-20">
               <motion.div
                 className="text-center max-w-3xl mx-auto"
                 initial={{ opacity: 0, y: 20 }}
@@ -31,7 +31,7 @@ const LeoPage = () => {
           </div>
         </section>
 
-        <section className="bg-gray-50 py-16">
+        <section className="bg-white py-20">
             <div className="container mx-auto px-6 lg:px-8 text-center max-w-4xl">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -44,11 +44,11 @@ const LeoPage = () => {
                     <div className="mt-10">
                         <a
                             href="#"
-                            className="inline-block bg-primary text-white font-bold py-4 px-10 rounded-lg text-lg hover:bg-primary-focus transition-transform duration-300 transform hover:scale-105"
+                            className="inline-block bg-primary text-white font-bold py-4 px-10 rounded-full text-lg hover:bg-primary-focus transition-transform duration-300 transform hover:scale-105 shadow-lg hover:shadow-primary/50"
                         >
                             Obtenir un accès anticipé
                         </a>
-                        <p className="mt-4 text-sm text-gray-500 font-semibold">👉 Léo par Terros</p>
+                        <p className="mt-6 text-sm text-gray-500 font-semibold tracking-wide">👉 Léo par Terros</p>
                     </div>
                 </motion.div>
             </div>
@@ -153,7 +153,7 @@ const LeoPage = () => {
         </section>
 
         {/* Key Features Section */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-x-20 gap-y-12 items-center">
               <motion.div
