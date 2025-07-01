@@ -172,7 +172,7 @@ const LeoPage = () => {
                 transition={{ duration: 0.8 }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=1169&auto=format&fit=crop"
+                  src="https://images.unsplash.com/photo-1620712943543-95fc69634367?q=80&w=1300&auto=format&fit=crop"
                   alt="IA apprenant et évoluant"
                   className="rounded-xl shadow-2xl w-full max-w-lg"
                 />
