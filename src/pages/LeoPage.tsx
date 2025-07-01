@@ -10,30 +10,22 @@ const LeoPage = () => {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="bg-white py-20">
-          <div className="container mx-auto px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-x-16 gap-y-12 items-center">
+        <section 
+          className="relative bg-cover bg-center text-white" 
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1600&auto=format&fit=crop')" }}
+        >
+          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-center min-h-[60vh] pt-40 pb-20">
               <motion.div
-                className="text-center lg:text-left"
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
+                className="text-center max-w-3xl mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 leading-tight">
+                <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter">
                   Léo, le premier développeur IA made in France 🇫🇷
                 </h1>
-              </motion.div>
-              <motion.div
-                className="flex justify-center"
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1600&auto=format&fit=crop"
-                  alt="Illustration d'un robot IA travaillant sur un ordinateur"
-                  className="rounded-2xl shadow-2xl w-full max-w-md"
-                />
               </motion.div>
             </div>
           </div>
