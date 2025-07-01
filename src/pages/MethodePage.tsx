@@ -190,7 +190,40 @@ const MethodePage = () => {
             </div>
           </div>
         </section>
+
         <section className="py-24 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.8 }}
+              >
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6">
+                  Budgéter et planifier
+                </h2>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Notre méthode d'accompagnement vise à évaluer la complexité technique d'un projet et les différentes étapes et actions nécessaires pour le mener à bien. Ainsi nous partons de nos premiers échanges pour élaborer une première fourchette budgétaire détaillée pour vous permettre de déterminer la pertinence de chaque fonctionnalité en fonction de son coût. Nous mobilisons également notre expérience pour vous fournir une vue planifiée de chaque étape du développement.
+                </p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                <img 
+                  src="https://images.unsplash.com/photo-1554224155-8d04421cd6c3?q=80&w=1170&auto=format&fit=crop" 
+                  alt="Personne en train de budgétiser avec une calculatrice et des documents"
+                  className="rounded-lg shadow-xl object-cover w-full"
+                />
+              </motion.div>
+            </div>
+          </div>
+        </section>
+        
+        <section className="py-24 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.h2 
               className="text-3xl md:text-4xl font-bold text-gray-900"
