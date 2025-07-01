@@ -26,30 +26,29 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${hasScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'}`}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-24">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${hasScrolled ? 'bg-background/80 backdrop-blur-lg border-b border-gray-200/50' : 'bg-transparent'}`}>
+      <div className="container">
+        <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
-            <Link to="/" className={`text-3xl font-extrabold tracking-tighter transition-colors duration-300 ${hasScrolled ? 'text-secondary' : 'text-white'}`}>
+            <Link to="/" className={`text-2xl font-bold tracking-tight transition-colors duration-300 ${hasScrolled ? 'text-secondary' : 'text-white'}`}>
               Terros
             </Link>
           </div>
-          <nav className="hidden md:flex md:space-x-10">
+          <nav className="hidden md:flex md:space-x-2">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.href}
-                className={`relative group text-base font-medium transition-colors duration-300 py-2 ${hasScrolled ? 'text-accent hover:text-primary' : 'text-gray-200 hover:text-white'}`}
+                className={`text-base font-medium transition-colors duration-300 px-4 py-2 rounded-lg ${hasScrolled ? 'text-accent-DEFAULT hover:text-primary-DEFAULT hover:bg-primary-light' : 'text-gray-200 hover:text-white hover:bg-white/10'}`}
               >
                 {link.name}
-                <span className={`absolute bottom-0 left-0 w-full h-0.5 ${hasScrolled ? 'bg-primary' : 'bg-white'} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out`}></span>
               </Link>
             ))}
           </nav>
-          <div className="hidden md:flex items-center ml-10">
+          <div className="hidden md:flex items-center ml-4">
               <Link
                   to="#"
-                  className={`px-5 py-2 rounded-full font-semibold transition-all duration-300 ${hasScrolled ? 'bg-primary text-white hover:bg-primary-focus' : 'bg-white text-primary hover:bg-gray-200'}`}
+                  className={`px-5 py-2.5 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${hasScrolled ? 'bg-primary text-white hover:bg-primary-focus shadow-md' : 'bg-white text-primary hover:bg-gray-200'}`}
               >
                   Contactez-nous
               </Link>
@@ -57,10 +56,10 @@ const Header = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`inline-flex items-center justify-center p-2 rounded-md focus:outline-none transition-colors duration-300 ${hasScrolled ? 'text-accent hover:text-primary' : 'text-gray-200 hover:text-white'}`}
+              className={`inline-flex items-center justify-center p-2 rounded-lg focus:outline-none transition-colors duration-300 ${hasScrolled ? 'text-accent-DEFAULT hover:text-primary-DEFAULT' : 'text-gray-200 hover:text-white'}`}
             >
               <span className="sr-only">Open main menu</span>
-              {isOpen ? <FiX className="h-7 w-7" /> : <FiMenu className="h-7 w-7" />}
+              {isOpen ? <FiX className="h-6 w-6" /> : <FiMenu className="h-6 w-6" />}
             </button>
           </div>
         </div>
@@ -74,12 +73,12 @@ const Header = () => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden overflow-hidden"
           >
-            <div className="px-2 pt-2 pb-4 space-y-2 sm:px-3 bg-white">
+            <div className="px-4 pt-2 pb-4 space-y-2 bg-white border-b border-gray-200">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   to={link.href}
-                  className="block px-3 py-3 rounded-md text-lg font-medium text-accent hover:text-primary hover:bg-gray-50"
+                  className="block px-4 py-3 rounded-lg text-base font-semibold text-accent-DEFAULT hover:text-primary-DEFAULT hover:bg-primary-light transition-colors duration-200"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
@@ -87,7 +86,7 @@ const Header = () => {
               ))}
               <Link
                 to="#"
-                className="block w-full text-center mt-4 px-3 py-3 rounded-md text-lg font-medium text-white bg-primary hover:bg-primary-focus"
+                className="block w-full text-center mt-4 px-4 py-3 rounded-lg text-base font-semibold text-white bg-primary hover:bg-primary-focus transition-colors duration-200"
                 onClick={() => setIsOpen(false)}
               >
                 Contactez-nous

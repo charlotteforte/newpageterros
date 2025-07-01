@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 
 const stats = [
-  { value: '2020', label: 'Date de création de Terros' },
+  { value: '2020', label: 'Date de création' },
   { value: '+100', label: 'Projets réalisés' },
-  { value: '+50', label: 'Clients' },
-  { value: '+100k', label: 'Utilisateurs' },
+  { value: '+50', label: 'Clients satisfaits' },
+  { value: '10k+', label: 'Utilisateurs' },
 ];
 
 const cardVariants = {
@@ -25,13 +25,18 @@ const cardVariants = {
 
 const Stats = () => {
   return (
-    <section className="bg-white py-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-extrabold text-center text-gray-900 sm:text-4xl mb-16">
-          Terros en chiffres
-        </h2>
+    <section className="bg-white py-24">
+      <div className="container">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-extrabold text-secondary sm:text-5xl">
+            L'impact de notre expertise
+          </h2>
+          <p className="mt-4 text-lg text-accent-DEFAULT max-w-2xl mx-auto">
+            Des résultats concrets qui témoignent de notre engagement et de notre savoir-faire.
+          </p>
+        </div>
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0.5"
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true, amount: 0.5 }}
@@ -46,11 +51,11 @@ const Stats = () => {
           {stats.map((stat) => (
             <motion.div
               key={stat.label}
-              className="bg-gray-50 p-8 rounded-lg text-center"
+              className="bg-primary-light p-8 text-center"
               variants={cardVariants}
             >
-              <p className="text-5xl font-extrabold text-primary">{stat.value}</p>
-              <p className="mt-2 text-lg font-medium text-gray-600">{stat.label}</p>
+              <p className="text-5xl font-black text-primary">{stat.value}</p>
+              <p className="mt-2 text-lg font-medium text-accent-DEFAULT">{stat.label}</p>
             </motion.div>
           ))}
         </motion.div>

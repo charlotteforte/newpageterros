@@ -14,15 +14,15 @@ const TrustedBy = () => {
   const duplicatedLogos = [...logos, ...logos];
 
   return (
-    <section className="py-24 bg-gray-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h3 className="text-center text-2xl font-bold text-gray-900 tracking-tight mb-16">
+    <section className="py-20 bg-primary-light">
+      <div className="container">
+        <h3 className="text-center text-sm font-bold text-accent-DEFAULT uppercase tracking-wider mb-12">
           Ils nous font confiance
         </h3>
         <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
           <ul className="flex items-center justify-center md:justify-start [&_li]:mx-12 animate-infinite-scroll">
             {duplicatedLogos.map((logo, index) => (
-              <li key={index} className="text-gray-400 hover:text-gray-800 transition-colors duration-300 text-4xl font-semibold grayscale hover:grayscale-0 whitespace-nowrap">
+              <li key={index} className="text-gray-400 hover:text-secondary transition-colors duration-300 text-3xl font-bold whitespace-nowrap opacity-75 hover:opacity-100">
                 {logo.name}
               </li>
             ))}

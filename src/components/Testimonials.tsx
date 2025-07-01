@@ -25,7 +25,7 @@ const testimonials = [
 const Testimonials = () => {
   return (
     <section className="py-24 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: -20 }}
@@ -33,9 +33,9 @@ const Testimonials = () => {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-secondary tracking-tight">Ils parlent de nous</h2>
-            <p className="mt-4 max-w-3xl mx-auto text-lg text-accent">
-              Nous accompagnons plus de 50 clients startups, PME et grands groupes dans la mise en place de projets numériques variés.
+            <h2 className="text-4xl md:text-5xl font-extrabold text-secondary tracking-tight">Ce que disent nos clients</h2>
+            <p className="mt-4 max-w-3xl mx-auto text-lg text-accent-DEFAULT">
+              Découvrez comment nous avons aidé des entreprises comme la vôtre à atteindre leurs objectifs.
             </p>
           </motion.div>
 
@@ -43,21 +43,21 @@ const Testimonials = () => {
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={index}
-                className="bg-gray-50 p-8 rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col"
+                className="bg-primary-light p-8 rounded-xl flex flex-col group"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <FaQuoteLeft className="text-primary text-3xl mb-6" />
-                <p className="text-accent italic mb-6 flex-grow">
+                <FaQuoteLeft className="text-primary/50 text-3xl mb-6 transform transition-transform duration-300 group-hover:scale-110" />
+                <p className="text-accent-DEFAULT mb-6 flex-grow">
                   "{testimonial.quote}"
                 </p>
                 <div className="flex items-center mt-auto">
-                  <img src={testimonial.image} alt={testimonial.author} className="w-14 h-14 rounded-full object-cover mr-4 border-2 border-primary/30" />
+                  <img src={testimonial.image} alt={testimonial.author} className="w-12 h-12 rounded-full object-cover mr-4 border-2 border-primary/20" />
                   <div>
-                    <p className="font-bold text-secondary text-lg">{testimonial.author}</p>
-                    <p className="text-accent">{testimonial.title}</p>
+                    <p className="font-bold text-secondary text-base">{testimonial.author}</p>
+                    <p className="text-accent-DEFAULT text-sm">{testimonial.title}</p>
                   </div>
                 </div>
               </motion.div>
