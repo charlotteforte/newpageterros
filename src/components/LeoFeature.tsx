@@ -41,7 +41,7 @@ const LeoFeature = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl tracking-tight">
-              HelloLeo, le premier développeur IA 100% français 🇫🇷
+              Leo, le premier développeur IA 100% français 🇫🇷
             </h2>
             <p className="mt-4 text-xl text-gray-600">
               Faites gagner du temps à votre équipe de développement !
