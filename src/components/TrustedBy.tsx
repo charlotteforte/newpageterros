@@ -17,7 +17,7 @@ const TrustedBy = () => {
     <section className="py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h3 className="text-center text-sm font-semibold text-gray-500 uppercase tracking-wider mb-12">
-          Plus de 100 projets réalisés pour des clients d'exception
+          Ils nous font confiance
         </h3>
         <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
           <ul className="flex items-center justify-center md:justify-start [&_li]:mx-12 animate-infinite-scroll">
