@@ -1,90 +1,118 @@
 import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { FaPencilRuler, FaCode, FaRocket, FaSyncAlt, FaUsers, FaListAlt, FaBullseye } from 'react-icons/fa';
-import { FiArrowRight } from 'react-icons/fi';
+import { FaPencilRuler, FaCode, FaRocket, FaSyncAlt } from 'react-icons/fa';
+import { FiArrowRight, FiCheckCircle } from 'react-icons/fi';
 
-const steps = [
+const processSteps = [
   {
+    id: "01",
     icon: <FaPencilRuler className="h-8 w-8 text-primary" />,
-    title: "Conception",
-    description: "Nous imaginons et planifions avec vous les fonctionnalités les plus à mêmes de répondre à vos problématiques métier."
+    title: "Conception & Stratégie",
+    description: "Nous transformons votre vision en une stratégie produit concrète. En collaboration étroite, nous définissons les objectifs, le périmètre et la feuille de route pour créer une solution qui répond parfaitement à vos besoins métier.",
+    details: [
+      "Ateliers de co-création",
+      "Analyse des besoins utilisateurs",
+      "Spécifications fonctionnelles",
+      "Maquettage et prototypage (UI/UX)"
+    ]
   },
   {
+    id: "02",
     icon: <FaCode className="h-8 w-8 text-primary" />,
-    title: "Développement agile",
-    description: "Applications web, mobile, outils d'automatisation... Nous mettons nos nombreux savoirs faire à votre service en itérant de manière agile tout au long du processus de développement."
+    title: "Développement Agile",
+    description: "Nos équipes développent votre solution par itérations courtes et rapides. Cette approche nous permet de nous adapter aux changements, de vous livrer de la valeur en continu et de garantir une qualité de code irréprochable.",
+    details: [
+      "Sprints de 2 semaines",
+      "Démos et retours réguliers",
+      "Intégration et déploiement continus (CI/CD)",
+      "Tests automatisés"
+    ]
   },
   {
+    id: "03",
     icon: <FaRocket className="h-8 w-8 text-primary" />,
-    title: "Déploiement",
-    description: "Votre projet mis en ligne en un temps record, sur votre propre infrastructure ou nos serveurs dédiés sécurisés."
+    title: "Lancement & Déploiement",
+    description: "Nous préparons et exécutons un lancement sans accroc. De la configuration de l'infrastructure à la mise en production, nous assurons une transition fluide pour vos utilisateurs.",
+    details: [
+      "Infrastructure cloud scalable",
+      "Monitoring et alertes",
+      "Plan de migration des données",
+      "Formation des utilisateurs"
+    ]
   },
   {
+    id: "04",
     icon: <FaSyncAlt className="h-8 w-8 text-primary" />,
-    title: "Évolution",
-    description: "Un bon produit est un produit qui évolue. Nous demeurons à vos côtés sur toute la durée de votre projet pour assurer la maintenance et l'ajout de nouvelles fonctionnalités."
-  }
-];
-
-const questions = [
-  {
-    icon: <FaUsers className="h-6 w-6 text-primary" />,
-    text: "S'agit-il d'un projet à destination du grand public ou de vos équipes métiers ?"
-  },
-  {
-    icon: <FaListAlt className="h-6 w-6 text-primary" />,
-    text: "Quelles seront les principales fonctionnalités du projet ?"
-  },
-  {
-    icon: <FaBullseye className="h-6 w-6 text-primary" />,
-    text: "Quel sera l'usage type de cette plateforme ?"
+    title: "Évolution & Maintenance",
+    description: "Un produit digital est un organisme vivant. Nous restons à vos côtés pour assurer sa pérennité, l'optimiser et l'enrichir de nouvelles fonctionnalités en fonction des retours utilisateurs et de vos objectifs.",
+    details: [
+      "Support technique réactif",
+      "Maintenance corrective et préventive",
+      "Optimisation des performances",
+      "Feuille de route évolutive"
+    ]
   }
 ];
 
 const MethodePage = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
-    <div className="bg-white text-gray-800 font-sans">
+    <div className="bg-background text-foreground font-sans">
       <Header />
       <main>
-        <section 
-          className="relative bg-cover bg-center text-white" 
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop')" }}
-        >
-          <div className="absolute inset-0 bg-black/60"></div>
-          <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-center min-h-[70vh] pt-40 pb-20">
-              <motion.div
-                className="text-center max-w-3xl mx-auto"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter">
-                  Méthode de développement agile
-                </h1>
-                <p className="mt-6 text-xl md:text-2xl text-gray-200">
-                  Prototyper. Développer. Itérer.
-                </p>
-                <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
-                  Notre méthode de développement Web et Mobile agile vise à concevoir des produits de manière efficace et pragmatique.
-                </p>
-              </motion.div>
-            </div>
+        {/* Hero Section */}
+        <section className="bg-primary-light">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-40">
+            <motion.div
+              className="text-center max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter text-secondary">
+                Notre Méthode : De l'Idée au Succès Digital
+              </h1>
+              <p className="mt-6 text-lg md:text-xl text-accent-light max-w-2xl mx-auto">
+                Nous combinons agilité, expertise technique et vision produit pour construire des solutions sur-mesure qui génèrent un impact réel.
+              </p>
+            </motion.div>
           </div>
         </section>
 
-        <section className="py-32 bg-gray-50">
+        {/* Process Section */}
+        <section className="py-20 md:py-32 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-4xl mx-auto">
+            <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
               <motion.h2 
-                className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight"
+                className="text-3xl md:text-5xl font-bold text-secondary tracking-tight"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 0.8 }}
               >
-                Développer une plateforme ou application sur mesure : mode d’emploi
+                Une approche structurée pour des résultats concrets
               </motion.h2>
               <motion.p 
                 className="mt-6 text-lg text-gray-600 leading-relaxed"
@@ -93,106 +121,47 @@ const MethodePage = () => {
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                Notre méthode de développement agile se découpe en 4 étapes successives : conception, développement, déploiement, évolution. Ces 4 étapes visent à atteindre un objectif précis : lancer une première version de votre projet dans un délai restreint, afin de le confronter dès que possible à vos utilisateurs cibles et mettre à profit leurs retours pour itérer efficacement sur le produit.
-              </motion.p>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-32 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto">
-              <div className="relative">
-                {/* Vertical line on larger screens */}
-                <div className="hidden md:block absolute top-0 bottom-0 left-8 w-0.5 bg-gray-200" aria-hidden="true"></div>
-                
-                <div className="space-y-16">
-                  {steps.map((step, index) => (
-                    <motion.div
-                      key={index}
-                      className="md:flex items-start relative"
-                      initial={{ opacity: 0, x: -30 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true, amount: 0.5 }}
-                      transition={{ duration: 0.6, delay: index * 0.2 }}
-                    >
-                      <div className="flex-shrink-0 w-16 h-16 flex items-center justify-center rounded-full bg-primary/10 text-primary md:bg-white md:ring-8 md:ring-white z-10">
-                        {step.icon}
-                      </div>
-                      <div className="mt-4 md:mt-0 md:ml-8">
-                        <h3 className="text-2xl font-bold text-secondary">{step.title}</h3>
-                        <p className="mt-3 text-gray-600 leading-relaxed">{step.description}</p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-32 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-4xl mx-auto mb-20">
-              <motion.h2 
-                className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.8 }}
-              >
-                Comprendre le besoin
-              </motion.h2>
-              <motion.p 
-                className="mt-6 text-lg text-gray-600 leading-relaxed"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                La phase de conception vise avant tout à déterminer avec précision l'objectif du projet en préparation.
+                Notre processus en 4 étapes garantit transparence, collaboration et excellence à chaque phase de votre projet.
               </motion.p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <motion.div
-                className="space-y-10"
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.8 }}
-              >
-                {questions.map((q, i) => (
-                  <div key={i} className="flex items-start">
-                    <div className="flex-shrink-0 h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      {q.icon}
+            <motion.div 
+              className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              {processSteps.map((step) => (
+                <motion.div
+                  key={step.id}
+                  className="bg-primary-light p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col"
+                  variants={itemVariants}
+                >
+                  <div className="flex items-center mb-6">
+                    <div className="flex-shrink-0 w-16 h-16 flex items-center justify-center rounded-full bg-white ring-8 ring-primary/10">
+                      {step.icon}
                     </div>
-                    <div className="ml-4">
-                      <p className="text-lg font-semibold text-secondary">{q.text}</p>
-                    </div>
+                    <span className="text-5xl font-bold text-primary/20 ml-auto">{step.id}</span>
                   </div>
-                ))}
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                  Nous mettons à profit notre expertise, acquise à travers plus de 50 projets numériques, pour vous aider à répondre à ces questions.
-                </p>
-                <img 
-                  src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200&auto=format&fit=crop" 
-                  alt="Team brainstorming"
-                  className="rounded-lg shadow-xl object-cover w-full"
-                />
-              </motion.div>
-            </div>
+                  <h3 className="text-xl font-bold text-secondary mb-3">{step.title}</h3>
+                  <p className="text-gray-600 leading-relaxed mb-6 flex-grow">{step.description}</p>
+                  <ul className="space-y-2">
+                    {step.details.map((detail, i) => (
+                      <li key={i} className="flex items-center text-gray-700">
+                        <FiCheckCircle className="h-5 w-5 text-primary mr-3 flex-shrink-0" />
+                        <span>{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </section>
 
-        <section className="py-32 bg-white">
+        {/* Value Proposition Section */}
+        <section className="py-20 md:py-32 bg-primary-light">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <motion.div
@@ -201,60 +170,52 @@ const MethodePage = () => {
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 0.8 }}
               >
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-6">
-                  Budgéter et planifier
+                <h2 className="text-3xl md:text-4xl font-bold text-secondary tracking-tight mb-6">
+                  Plus qu'une méthode, un partenariat
                 </h2>
+                <p className="text-lg text-gray-600 leading-relaxed mb-8">
+                  Notre accompagnement va au-delà de la simple exécution technique. Nous nous positionnons comme votre partenaire stratégique pour vous aider à prendre les bonnes décisions, à budgétiser intelligemment et à planifier chaque étape pour un succès durable.
+                </p>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  Notre méthode d'accompagnement vise à évaluer la complexité technique d'un projet et les différentes étapes et actions nécessaires pour le mener à bien. Ainsi nous partons de nos premiers échanges pour élaborer une première fourchette budgétaire détaillée pour vous permettre de déterminer la pertinence de chaque fonctionnalité en fonction de son coût. Nous mobilisons également notre expérience pour vous fournir une vue planifiée de chaque étape du développement.
+                  Avec plus de 50 projets numériques à notre actif, nous mettons notre expérience à votre service pour anticiper les défis et maximiser votre retour sur investissement.
                 </p>
               </motion.div>
               <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 <img 
                   src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1332&auto=format&fit=crop" 
-                  alt="Équipe planifiant un projet"
-                  className="rounded-lg shadow-xl object-cover w-full"
+                  alt="Partenariat stratégique"
+                  className="rounded-xl shadow-2xl object-cover w-full"
                 />
               </motion.div>
             </div>
           </div>
         </section>
         
-        <section className="py-32 bg-gray-50">
+        {/* CTA Section */}
+        <section className="py-20 md:py-32 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <motion.h2 
-              className="text-3xl md:text-4xl font-bold text-gray-900"
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.8 }}
             >
-              Prêt à démarrer votre projet ?
-            </motion.h2>
-            <motion.p 
-              className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              Contactez-nous pour discuter de vos idées et voir comment nous pouvons vous aider à les concrétiser.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
+              <h2 className="text-3xl md:text-5xl font-bold text-secondary">
+                Prêt à donner vie à votre projet ?
+              </h2>
+              <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
+                Discutons de vos ambitions. Notre première consultation est l'occasion d'explorer ensemble le potentiel de votre idée.
+              </p>
               <a 
                 href="#" 
-                className="mt-8 inline-flex items-center bg-primary text-white font-bold py-4 px-8 rounded-lg text-lg hover:bg-primary-focus transition-all duration-300 transform hover:scale-105"
+                className="mt-10 inline-flex items-center bg-primary text-white font-bold py-4 px-10 rounded-lg text-lg hover:bg-primary-focus transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
-                Nous contacter <FiArrowRight className="ml-2" />
+                Planifier un appel <FiArrowRight className="ml-3" />
               </a>
             </motion.div>
           </div>
