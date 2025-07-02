@@ -1,6 +1,8 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import { FiTarget, FiShield, FiCode } from 'react-icons/fi';
+import { FiTarget, FiShield, FiCode, FiCheckCircle } from 'react-icons/fi';
+import { FaAmazon } from "react-icons/fa";
+import { SiTrustpilot, SiBookingdotcom } from "react-icons/si";
 
 const ScrapingAgencyPage = () => {
     return (
@@ -45,6 +47,54 @@ const ScrapingAgencyPage = () => {
                                     Une déontologie stricte pour un scraping responsable.
                                 </p>
                             </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Data Sources Section */}
+                <section className="py-20 bg-gray-50">
+                    <div className="container mx-auto px-4">
+                        <div className="text-center mb-12">
+                            <h2 className="text-3xl md:text-4xl font-bold text-secondary">Nos principales sources d’extraction</h2>
+                        </div>
+                        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 text-gray-500">
+                            <FaAmazon className="h-12 w-12 md:h-16 md:w-16 text-[#FF9900]" title="Amazon" />
+                            <SiTrustpilot className="h-12 w-12 md:h-16 md:w-16 text-[#00B67A]" title="Trustpilot" />
+                            <SiBookingdotcom className="h-12 w-12 md:h-16 md:w-16 text-[#003580]" title="Booking.com" />
+                        </div>
+                    </div>
+                </section>
+
+                {/* Offer Section */}
+                <section className="py-20">
+                    <div className="container mx-auto px-4">
+                        <div className="max-w-4xl mx-auto">
+                            <h2 className="text-3xl md:text-4xl font-bold text-secondary text-center mb-8">Notre offre de Scraping</h2>
+                            <p className="text-lg text-accent-light mb-8">
+                                Le Web Scraping consiste à extraire de manière automatisée des données issues d’une ou plusieurs sources sur internet. Les usages du scraping sont très nombreux et peuvent présenter de nombreux avantages pour les entreprises.
+                            </p>
+                            <ul className="space-y-4">
+                                <li className="flex items-start">
+                                    <FiCheckCircle className="h-6 w-6 text-primary mr-4 mt-1 flex-shrink-0" />
+                                    <span className="text-accent-light">Surveiller automatiquement les prix d’un ou plusieurs produits concurrents en temps réel</span>
+                                </li>
+                                <li className="flex items-start">
+                                    <FiCheckCircle className="h-6 w-6 text-primary mr-4 mt-1 flex-shrink-0" />
+                                    <span className="text-accent-light">Extraire des avis en ligne pour alimenter des modèles d’IA sur mesure</span>
+                                </li>
+                                <li className="flex items-start">
+                                    <FiCheckCircle className="h-6 w-6 text-primary mr-4 mt-1 flex-shrink-0" />
+                                    <span className="text-accent-light">Constituer des bases de leads qualifiés pour alimenter sa prospection</span>
+                                </li>
+                                <li className="flex items-start">
+                                    <FiCheckCircle className="h-6 w-6 text-primary mr-4 mt-1 flex-shrink-0" />
+                                    <span className="text-accent-light">Identifier les technologies et outils utilisés par des entreprises pour leur proposer des services adaptés</span>
+                                </li>
+                                <li className="flex items-start">
+                                    <FiCheckCircle className="h-6 w-6 text-primary mr-4 mt-1 flex-shrink-0" />
+                                    <span className="text-accent-light">Et de nombreux autres cas d’usages !</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </section>
