@@ -64,7 +64,7 @@ const Header = () => {
                 {link.href ? (
                   <Link
                     to={link.href}
-                    className={`relative group text-base font-medium transition-colors duration-300 py-2 ${hasScrolled ? 'text-accent-DEFAULT hover:text-primary-DEFAULT' : 'text-gray-200 hover:text-white'}`}
+                    className={`relative group text-base font-medium transition-colors duration-300 py-2 flex items-center ${hasScrolled ? 'text-accent-DEFAULT hover:text-primary-DEFAULT' : 'text-gray-200 hover:text-white'}`}
                   >
                     {link.name}
                     <span className={`absolute bottom-0 left-0 w-full h-0.5 ${hasScrolled ? 'bg-primary' : 'bg-white'} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out`}></span>
