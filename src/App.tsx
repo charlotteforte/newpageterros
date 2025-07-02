@@ -5,6 +5,7 @@ import CasClientsPage from '@/pages/CasClientsPage';
 import AgencePage from '@/pages/AgencePage';
 import IntegrationPage from '@/pages/IntegrationPage';
 import LeoPage from '@/pages/LeoPage';
+import AiAgencyPage from '@/pages/AiAgencyPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path="/agence" element={<AgencePage />} />
       <Route path="/integration" element={<IntegrationPage />} />
       <Route path="/leo" element={<LeoPage />} />
+      <Route path="/agence-ia" element={<AiAgencyPage />} />
     </Routes>
   )
 }

@@ -1,18 +1,37 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiMenu, FiX } from 'react-icons/fi';
+import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
-const navLinks = [
+type SubLink = {
+  name: string;
+  href: string;
+};
+
+type NavLink = {
+  name: string;
+  href?: string;
+  subLinks?: SubLink[];
+};
+
+const navLinks: NavLink[] = [
   { name: 'Méthode', href: '/methode' },
   { name: 'Cas client', href: '/cas-clients' },
-  { name: 'Agence', href: '/agence' },
+  {
+    name: 'Agence',
+    subLinks: [
+      { name: 'L\'agence', href: '/agence' },
+      { name: 'Agence IA', href: '/agence-ia' },
+    ]
+  },
   { name: 'Intégration', href: '/integration' },
   { name: 'Leo, développeur IA', href: '/leo' },
 ];
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
+  const [openMobileSubmenu, setOpenMobileSubmenu] = useState<string | null>(null);
   const [hasScrolled, setHasScrolled] = useState(false);
 
   useEffect(() => {
@@ -36,14 +55,52 @@ const Header = () => {
           </div>
           <nav className="hidden md:flex md:space-x-8">
             {navLinks.map((link) => (
-              <Link
+              <div
                 key={link.name}
-                to={link.href}
-                className={`relative group text-base font-medium transition-colors duration-300 py-2 ${hasScrolled ? 'text-accent-DEFAULT hover:text-primary-DEFAULT' : 'text-gray-200 hover:text-white'}`}
+                className="relative"
+                onMouseEnter={() => link.subLinks && setOpenSubmenu(link.name)}
+                onMouseLeave={() => link.subLinks && setOpenSubmenu(null)}
               >
-                {link.name}
-                <span className={`absolute bottom-0 left-0 w-full h-0.5 ${hasScrolled ? 'bg-primary' : 'bg-white'} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out`}></span>
-              </Link>
+                {link.href ? (
+                  <Link
+                    to={link.href}
+                    className={`relative group text-base font-medium transition-colors duration-300 py-2 ${hasScrolled ? 'text-accent-DEFAULT hover:text-primary-DEFAULT' : 'text-gray-200 hover:text-white'}`}
+                  >
+                    {link.name}
+                    <span className={`absolute bottom-0 left-0 w-full h-0.5 ${hasScrolled ? 'bg-primary' : 'bg-white'} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out`}></span>
+                  </Link>
+                ) : (
+                  <button className={`relative group text-base font-medium transition-colors duration-300 py-2 flex items-center ${hasScrolled ? 'text-accent-DEFAULT hover:text-primary-DEFAULT' : 'text-gray-200 hover:text-white'}`}>
+                    {link.name}
+                    <FiChevronDown className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:rotate-180" />
+                  </button>
+                )}
+
+                <AnimatePresence>
+                  {link.subLinks && openSubmenu === link.name && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className={`absolute top-full left-0 mt-2 w-48 rounded-md shadow-lg ${hasScrolled ? 'bg-white' : 'bg-gray-800' } ring-1 ring-black ring-opacity-5`}
+                    >
+                      <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                        {link.subLinks.map((subLink) => (
+                          <Link
+                            key={subLink.name}
+                            to={subLink.href}
+                            className={`block px-4 py-2 text-sm ${hasScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-gray-200 hover:bg-gray-700'}`}
+                            role="menuitem"
+                            onClick={() => setOpenSubmenu(null)}
+                          >
+                            {subLink.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             ))}
           </nav>
           <div className="hidden md:flex items-center ml-4">
@@ -76,14 +133,48 @@ const Header = () => {
           >
             <div className="px-4 pt-2 pb-4 space-y-2 bg-white border-b border-gray-200">
               {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.href}
-                  className="block px-4 py-3 rounded-lg text-base font-semibold text-accent-DEFAULT hover:text-primary-DEFAULT hover:bg-primary-light transition-colors duration-200"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.name}
-                </Link>
+                <div key={link.name}>
+                  {link.subLinks ? (
+                    <>
+                      <button
+                        onClick={() => setOpenMobileSubmenu(openMobileSubmenu === link.name ? null : link.name)}
+                        className="w-full flex justify-between items-center px-4 py-3 rounded-lg text-base font-semibold text-accent-DEFAULT hover:text-primary-DEFAULT hover:bg-primary-light transition-colors duration-200"
+                      >
+                        <span>{link.name}</span>
+                        <FiChevronDown className={`h-5 w-5 transition-transform ${openMobileSubmenu === link.name ? 'rotate-180' : ''}`} />
+                      </button>
+                      <AnimatePresence>
+                        {openMobileSubmenu === link.name && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            className="pl-4 mt-1 space-y-1"
+                          >
+                            {link.subLinks.map((subLink) => (
+                              <Link
+                                key={subLink.name}
+                                to={subLink.href}
+                                className="block px-4 py-2 rounded-lg text-base font-medium text-accent-light hover:text-primary-DEFAULT hover:bg-primary-light transition-colors duration-200"
+                                onClick={() => setIsOpen(false)}
+                              >
+                                {subLink.name}
+                              </Link>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </>
+                  ) : (
+                    <Link
+                      to={link.href!}
+                      className="block px-4 py-3 rounded-lg text-base font-semibold text-accent-DEFAULT hover:text-primary-DEFAULT hover:bg-primary-light transition-colors duration-200"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {link.name}
+                    </Link>
+                  )}
+                </div>
               ))}
               <Link
                 to="#"
