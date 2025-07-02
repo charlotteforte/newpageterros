@@ -3,7 +3,8 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from "react-router-dom";
-import { FiArrowRight, FiClipboard, FiCpu, FiFileText, FiGitMerge, FiShare2, FiChevronDown, FiZap, FiBrain, FiCode } from "react-icons/fi";
+import { FiArrowRight, FiClipboard, FiCpu, FiFileText, FiGitMerge, FiShare2, FiChevronDown, FiZap, FiCode } from "react-icons/fi";
+import { FaBrain } from "react-icons/fa";
 
 const useCases = [
   {
@@ -29,7 +30,7 @@ const useCases = [
 ];
 
 const llms = [
-    { name: "Mistral", icon: <FiBrain className="h-10 w-10 text-primary-focus" /> },
+    { name: "Mistral", icon: <FaBrain className="h-10 w-10 text-primary-focus" /> },
     { name: "Claude 3", icon: <FiCpu className="h-10 w-10 text-primary-focus" /> },
     { name: "GPT-4", icon: <FiZap className="h-10 w-10 text-primary-focus" /> },
     { name: "Llama", icon: <FiCode className="h-10 w-10 text-primary-focus" /> },
