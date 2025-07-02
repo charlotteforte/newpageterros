@@ -75,7 +75,7 @@ const AiAgencyPage = () => {
 
       <main className="pt-24 bg-white">
         {/* Hero Section */}
-        <section className="py-20 md:py-32">
+        <section className="py-20 md:py-32 bg-gradient-to-b from-blue-50 to-white">
           <div className="container mx-auto px-4 text-center">
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
