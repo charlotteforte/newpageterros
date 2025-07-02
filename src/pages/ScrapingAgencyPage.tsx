@@ -46,6 +46,30 @@ const ourApproach = [
     },
 ];
 
+const GridPattern = () => (
+    <div className="absolute inset-0 h-full w-full overflow-hidden">
+        <svg
+            className="absolute h-full w-full fill-gray-400/5 [mask-image:radial-gradient(black,transparent_60%)]"
+            aria-hidden="true"
+        >
+            <defs>
+                <pattern
+                    id="grid-pattern"
+                    width="72"
+                    height="72"
+                    patternUnits="userSpaceOnUse"
+                    x="50%"
+                    y="50%"
+                    patternTransform="translate(-36 -36)"
+                >
+                    <path d="M0 36V.5M36 .5V0"></path>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" strokeWidth="0" fill="url(#grid-pattern)"></rect>
+        </svg>
+    </div>
+);
+
 const ScrapingAgencyPage = () => {
     const FADE_IN_VARIANTS = {
         hidden: { opacity: 0, y: 10 },
@@ -58,17 +82,18 @@ const ScrapingAgencyPage = () => {
 
             <main className="overflow-x-hidden">
                 {/* Hero Section */}
-                <section className="pt-32 pb-20 bg-primary-light">
-                    <div className="container mx-auto px-4 text-center">
+                <section className="relative pt-32 pb-20 bg-slate-900">
+                    <GridPattern />
+                    <div className="container relative z-10 mx-auto px-4 text-center">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
                         >
-                            <h1 className="text-4xl md:text-6xl font-bold text-secondary tracking-tight">
+                            <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight">
                                 Agence Web Scraping
                             </h1>
-                            <p className="mt-6 text-lg md:text-xl text-accent-light max-w-3xl mx-auto">
+                            <p className="mt-6 text-lg md:text-xl text-slate-300 max-w-3xl mx-auto">
                                 Transformez le web en données structurées. Nous mettons en place des programmes de scraping performants, éthiques et conformes au RGPD.
                             </p>
                         </motion.div>
