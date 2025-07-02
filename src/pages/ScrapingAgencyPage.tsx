@@ -5,7 +5,7 @@ import {
     FiTarget, FiShield, FiCode, FiDatabase, FiArrowRight, FiTrendingUp, FiZap, FiEye, FiChevronDown
 } from 'react-icons/fi';
 import { FaAmazon, FaGoogle } from "react-icons/fa";
-import { SiTrustpilot, SiLinkedin } from "react-icons/si";
+import { SiTrustpilot } from "react-icons/si";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import CountUp from 'react-countup';
@@ -86,7 +86,6 @@ const ScrapingAgencyPage = () => {
                         <div className="mt-8 flex flex-wrap justify-center items-center gap-x-12 gap-y-8 text-gray-500">
                             <FaAmazon className="h-10 w-auto text-gray-400 hover:text-gray-800 transition-colors" title="Amazon" />
                             <FaGoogle className="h-9 w-auto text-gray-400 hover:text-gray-800 transition-colors" title="Google" />
-                            <SiLinkedin className="h-9 w-auto text-gray-400 hover:text-gray-800 transition-colors" title="LinkedIn" />
                             <SiTrustpilot className="h-8 w-auto text-gray-400 hover:text-gray-800 transition-colors" title="Trustpilot" />
                             <span className="text-2xl font-bold text-gray-400 hover:text-gray-800 transition-colors" title="Booking.com">Booking.com</span>
                         </div>
