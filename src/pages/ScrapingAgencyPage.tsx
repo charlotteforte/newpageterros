@@ -82,7 +82,7 @@ const ScrapingAgencyPage = () => {
                 {/* Data Sources Section */}
                 <section className="py-16 bg-white">
                     <div className="container mx-auto px-4">
-                        <h3 className="text-center text-gray-500 font-semibold uppercase tracking-wider">Extraction depuis n'importe quelle source, y compris :</h3>
+                        <h3 className="text-center text-gray-500 font-semibold uppercase tracking-wider">Nos principales sources d’extraction :</h3>
                         <div className="mt-8 flex flex-wrap justify-center items-center gap-x-12 gap-y-8 text-gray-500">
                             <FaAmazon className="h-10 w-auto text-gray-400 hover:text-gray-800 transition-colors" title="Amazon" />
                             <FaGoogle className="h-9 w-auto text-gray-400 hover:text-gray-800 transition-colors" title="Google" />
