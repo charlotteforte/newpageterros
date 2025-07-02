@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from "react-router-dom";
-import { FiArrowRight, FiClipboard, FiCpu, FiFileText, FiGitMerge, FiShare2, FiChevronDown } from "react-icons/fi";
+import { FiArrowRight, FiClipboard, FiCpu, FiFileText, FiGitMerge, FiShare2, FiChevronDown, FiZap, FiBrain, FiCode } from "react-icons/fi";
 
 const useCases = [
   {
@@ -29,10 +29,10 @@ const useCases = [
 ];
 
 const llms = [
-    { name: "Mistral", description: "développement ia" },
-    { name: "Claude 3", description: "développement ia" },
-    { name: "GPT-4", description: "développement ia" },
-    { name: "Llama", description: "développement ia" },
+    { name: "Mistral", icon: <FiBrain className="h-10 w-10 text-primary-focus" /> },
+    { name: "Claude 3", icon: <FiCpu className="h-10 w-10 text-primary-focus" /> },
+    { name: "GPT-4", icon: <FiZap className="h-10 w-10 text-primary-focus" /> },
+    { name: "Llama", icon: <FiCode className="h-10 w-10 text-primary-focus" /> },
 ];
 
 const faqData = [
@@ -68,86 +68,93 @@ const faqData = [
 ];
 
 const AiAgencyPage = () => {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
   return (
-    <div className="bg-white text-accent-DEFAULT">
+    <div className="bg-white text-accent-DEFAULT font-sans">
       <Header />
 
-      <main className="pt-24 bg-white">
+      <main className="bg-white">
         {/* Hero Section */}
-        <section className="py-20 md:py-32 bg-gradient-to-b from-blue-50 to-white">
-          <div className="container mx-auto px-4 text-center">
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-4xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400"
-            >
-              Agence IA
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="max-w-3xl mx-auto text-lg md:text-xl text-gray-700"
-            >
-              Nous utilisons l'IA dans vos outils et applications pour permettre à vos équipes de se concentrer sur leur coeur de métier.
-            </motion.p>
-          </div>
+        <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 text-center overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-b from-blue-50 to-white"></div>
+            <div className="container mx-auto px-4 relative">
+                <motion.h1 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  className="text-4xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-teal-500"
+                >
+                  Agence IA
+                </motion.h1>
+                <motion.p 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="max-w-3xl mx-auto text-lg md:text-xl text-gray-700"
+                >
+                  Nous intégrons l'IA dans vos outils pour décupler les capacités de vos équipes.
+                </motion.p>
+            </div>
         </section>
 
         {/* "Notre offre" Section */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-20">
             <div className="container mx-auto px-4">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
                     >
-                        <h2 className="text-3xl font-bold text-secondary mb-4">Notre offre de développement IA</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-6">Développement IA sur mesure</h2>
+                        <p className="text-lg text-gray-600 mb-4">
+                        Nous sommes une agence spécialisée dans le développement de solutions IA. Grâce à Leo, notre moteur propriétaire, nous concevons des outils innovants qui répondent à vos cas d'usage : détection d'erreurs, parsing de documents, résumé de contrats, génération de graphes...
+                        </p>
                         <p className="text-lg text-gray-600">
-                        Nous sommes une agence IA spécialisée dans le développement de solutions IA sur mesure. Grâce à Leo, notre moteur avancé développé en interne, nous offrons des prestations innovantes pour répondre à divers cas d’usage tels que la détection d’erreurs documentaires, le parsing ou encore le résumé de documents complexes comme les contrats, et la génération de graphes d’analyse de données dynamiques. Notre expertise en machine learning, deep learning, et NLP nous permet de transformer vos idées en solutions IA dynamiques, intuitives et à forte valeur ajoutée, optimisant ainsi vos processus métiers et améliorant votre efficacité opérationnelle.
+                        Notre expertise en machine learning, deep learning et NLP transforme vos idées en solutions dynamiques et à forte valeur ajoutée.
                         </p>
                     </motion.div>
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                        className="p-8 bg-gradient-to-br from-blue-500 to-teal-400 rounded-lg shadow-xl"
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="relative p-8 rounded-xl aspect-square flex items-center justify-center bg-gray-50 overflow-hidden"
                     >
-                        <FiCpu className="h-16 w-16 text-white mx-auto mb-6" />
-                        <h3 className="text-2xl font-bold text-white text-center">Solutions IA sur mesure</h3>
-                        <p className="text-white text-center mt-2">Développées avec notre moteur propriétaire, Leo.</p>
+                        <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(to_bottom,white,transparent)]"></div>
+                        <div className="relative flex flex-col items-center text-center">
+                            <div className="p-5 bg-gradient-to-br from-blue-500 to-teal-400 rounded-full shadow-lg">
+                                <FiCpu className="h-16 w-16 text-white" />
+                            </div>
+                            <h3 className="text-2xl font-bold text-secondary mt-6">Leo, notre moteur IA</h3>
+                            <p className="text-gray-600 mt-2 max-w-xs">Une technologie propriétaire pour des solutions performantes et adaptées.</p>
+                        </div>
                     </motion.div>
                 </div>
             </div>
         </section>
 
         {/* Use Cases Section */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-secondary">Des solutions pour chaque besoin</h2>
-              <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Explorez comment notre expertise IA peut résoudre vos défis métiers les plus complexes.</p>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-secondary">Des solutions pour chaque besoin métier</h2>
+              <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Explorez comment notre expertise IA peut résoudre vos défis les plus complexes et automatiser vos processus.</p>
             </div>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {useCases.map((useCase, index) => (
                 <motion.div
                   key={useCase.title}
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="p-6 border border-gray-200 rounded-lg shadow-sm hover:shadow-xl transition-shadow duration-300 bg-white flex items-start space-x-4"
+                  transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+                  className="p-8 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col"
                 >
-                  <div className="flex-shrink-0 mt-1">{useCase.icon}</div>
-                  <div>
-                    <h3 className="text-xl font-bold text-secondary mb-2">{useCase.title}</h3>
-                    <p className="text-gray-600">{useCase.description}</p>
-                  </div>
+                  <div className="p-4 bg-primary-light rounded-full self-start mb-6">{useCase.icon}</div>
+                  <h3 className="text-xl font-bold text-secondary mb-3">{useCase.title}</h3>
+                  <p className="text-gray-600 flex-grow">{useCase.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -155,11 +162,11 @@ const AiAgencyPage = () => {
         </section>
 
         {/* LLMs Section */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-24 bg-white">
             <div className="container mx-auto px-4">
-                <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-secondary">Basé sur des grands modèles de langages</h2>
-                    <p className="mt-4 text-lg text-gray-600">Nous intégrons les LLMs les plus performants du marché pour des résultats optimaux.</p>
+                <div className="text-center mb-16">
+                    <h2 className="text-3xl md:text-4xl font-bold text-secondary">Basé sur les meilleurs modèles de langage</h2>
+                    <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Nous intégrons les LLMs les plus performants du marché pour garantir des résultats à la pointe de la technologie.</p>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                     {llms.map((llm) => (
@@ -168,11 +175,11 @@ const AiAgencyPage = () => {
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5 }}
-                            className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                            transition={{ duration: 0.5, ease: "easeOut" }}
+                            className="p-6 bg-gray-50 rounded-xl border border-gray-100"
                         >
-                            <h3 className="text-2xl font-bold text-primary">{llm.name}</h3>
-                            <p className="text-sm text-gray-500 mt-1">{llm.description}</p>
+                            <div className="flex justify-center items-center mb-4">{llm.icon}</div>
+                            <h3 className="text-xl font-bold text-secondary">{llm.name}</h3>
                         </motion.div>
                     ))}
                 </div>
@@ -182,15 +189,15 @@ const AiAgencyPage = () => {
         {/* FAQ Section */}
         <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-secondary">FAQ - Questions sur le développement IA</h2>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-secondary">Questions fréquentes sur nos développements IA</h2>
             </div>
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-3xl mx-auto space-y-4">
               {faqData.map((faq, index) => (
-                <div key={index} className="border-b border-gray-200 py-4">
+                <div key={index} className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden">
                   <button
                     onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                    className="w-full flex justify-between items-center text-left focus:outline-none"
+                    className="w-full flex justify-between items-center text-left p-6 focus:outline-none focus:bg-primary-light transition-colors"
                   >
                     <span className="text-lg font-semibold text-secondary">{faq.question}</span>
                     <FiChevronDown className={`h-5 w-5 text-primary transition-transform duration-300 ${openFaq === index ? 'rotate-180' : ''}`} />
@@ -201,13 +208,13 @@ const AiAgencyPage = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        transition={{ duration: 0.4, ease: "easeInOut" }}
                         className="overflow-hidden"
                       >
-                        <div className="pt-4 text-gray-600">
+                        <div className="px-6 pb-6 text-gray-600">
                             <p>{faq.answer}</p>
                             {faq.list && faq.list.length > 0 && (
-                              <ul className="list-disc list-inside mt-2 pl-4 space-y-1">
+                              <ul className="list-disc list-inside mt-4 pl-4 space-y-2">
                                 {faq.list.map((item, i) => (
                                   <li key={i}>{item}</li>
                                 ))}
