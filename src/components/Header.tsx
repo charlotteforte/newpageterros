@@ -24,6 +24,7 @@ const navLinks: NavLink[] = [
       { name: 'Agence IA', href: '/agence-ia' },
       { name: 'Agence de développement Web', href: '/agence-web' },
       { name: 'Agence Scraping', href: '/agence-scraping' },
+      { name: 'Agence Strapi', href: '/agence-strapi' },
     ]
   },
   { name: 'Intégration', href: '/integration' },

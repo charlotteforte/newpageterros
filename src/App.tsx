@@ -8,6 +8,7 @@ import LeoPage from '@/pages/LeoPage';
 import AiAgencyPage from '@/pages/AiAgencyPage';
 import WebAgencyPage from '@/pages/WebAgencyPage';
 import ScrapingAgencyPage from '@/pages/ScrapingAgencyPage';
+import StrapiAgencyPage from '@/pages/StrapiAgencyPage';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path="/agence-ia" element={<AiAgencyPage />} />
       <Route path="/agence-web" element={<WebAgencyPage />} />
       <Route path="/agence-scraping" element={<ScrapingAgencyPage />} />
+      <Route path="/agence-strapi" element={<StrapiAgencyPage />} />
     </Routes>
   )
 }
