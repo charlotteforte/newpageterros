@@ -1,8 +1,9 @@
+import { useState } from "react";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from "react-router-dom";
-import { FiArrowRight, FiClipboard, FiCpu, FiFileText, FiGitMerge, FiShare2 } from "react-icons/fi";
+import { FiArrowRight, FiClipboard, FiCpu, FiFileText, FiGitMerge, FiShare2, FiChevronDown } from "react-icons/fi";
 
 const useCases = [
   {
@@ -34,7 +35,40 @@ const llms = [
     { name: "Llama", description: "développement ia" },
 ];
 
+const faqData = [
+  {
+    question: "Qu'est-ce qu'une agence IA ?",
+    answer: "Une agence IA est une agence spécialisée dans le développement et l'implémentation de solutions basées sur l'IA afin d'optimiser les processus, améliorer les performances et offrir des analyses avancées. Chez Terros, nous utilisons des technologies de machine learning, deep learning, et traitement du langage naturel (NLP) pour répondre à des besoins variés.",
+    list: []
+  },
+  {
+    question: "Quels types de solutions IA proposez-vous ?",
+    answer: "Nous proposons une gamme complète de solutions IA adaptées aux besoins spécifiques de chaque entreprise, notamment :",
+    list: [
+      "La détection d'erreurs documentaires : Identification et correction automatique des erreurs dans les documents.",
+      "le parsing et résumé de documents complexes : Analyse et synthèse de documents tels que les contrats.",
+      "La génération de graphes d'analyse de données : Création de visualisations dynamiques pour faciliter la compréhension des données."
+    ]
+  },
+  {
+    question: "Comment l'intelligence artificielle peut-elle bénéficier à mon entreprise ?",
+    answer: "L'intelligence artificielle permet d'automatiser des processus, d'améliorer la précision des analyses ou encore de prendre des décisions basées sur des données robustes. Avec nos solutions de machine learning et deep learning, nous aidons les entreprises à optimiser leurs opérations, prévoir les tendances et améliorer l'efficacité globale.",
+    list: []
+  },
+  {
+    question: "Quelles sont les avantages de travailler avec Terros pour le développement IA ?",
+    answer: "Chez Terros, nous offrons :",
+    list: [
+      "Expertise en IA : Une équipe de spécialistes en machine learning, deep learning, et NLP.",
+      "Solutions sur mesure : Développement de solutions adaptées à vos besoins spécifiques.",
+      "Performance et optimisation : Amélioration continue des solutions pour maximiser les résultats.",
+      "Support continu : Assistance technique et conseils pour garantir l'efficacité."
+    ]
+  }
+];
+
 const AiAgencyPage = () => {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   return (
     <div className="bg-white text-accent-DEFAULT">
       <Header />
@@ -143,6 +177,50 @@ const AiAgencyPage = () => {
                     ))}
                 </div>
             </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-20 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-secondary">FAQ - Questions sur le développement IA</h2>
+            </div>
+            <div className="max-w-4xl mx-auto">
+              {faqData.map((faq, index) => (
+                <div key={index} className="border-b border-gray-200 py-4">
+                  <button
+                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                    className="w-full flex justify-between items-center text-left focus:outline-none"
+                  >
+                    <span className="text-lg font-semibold text-secondary">{faq.question}</span>
+                    <FiChevronDown className={`h-5 w-5 text-primary transition-transform duration-300 ${openFaq === index ? 'rotate-180' : ''}`} />
+                  </button>
+                  <AnimatePresence>
+                    {openFaq === index && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pt-4 text-gray-600">
+                            <p>{faq.answer}</p>
+                            {faq.list && faq.list.length > 0 && (
+                              <ul className="list-disc list-inside mt-2 pl-4 space-y-1">
+                                {faq.list.map((item, i) => (
+                                  <li key={i}>{item}</li>
+                                ))}
+                              </ul>
+                            )}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
 
         {/* CTA Section */}
