@@ -1,7 +1,8 @@
+import { useState } from "react";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import { motion } from 'framer-motion';
-import { FiCode, FiLayers, FiCloud, FiTrendingUp, FiCheckCircle, FiMonitor, FiTerminal, FiUsers, FiArrowRight } from 'react-icons/fi';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FiCode, FiLayers, FiCloud, FiTrendingUp, FiCheckCircle, FiMonitor, FiTerminal, FiUsers, FiArrowRight, FiChevronDown } from 'react-icons/fi';
 import { Link } from "react-router-dom";
 
 const services = [
@@ -50,7 +51,23 @@ const methodSteps = [
     }
 ];
 
+const faqWebData = [
+    {
+        question: "Combien coûte le développement Web ?",
+        answer: "Le prix d'une plateforme Web varie selon la complexité et le nombre des fonctionnalités attendues. Le budget des projets de développement Web peut aller de quelques centaines d'euros pour la conception de sites internet vitrine à plusieurs dizaines voir centaines de milliers d'euros pour la conception de plateformes Web complexes.",
+    },
+    {
+        question: "Quelle différence entre un site Web et une application Web ?",
+        answer: "La différence entre un site web et une application web réside généralement dans leur fonctionnalité, leur complexité et la manière dont les utilisateurs interagissent avec eux. Un site web est souvent plus axé sur la présentation d'informations, tandis qu'une application web offre généralement une expérience plus interactive et des fonctionnalités avancées pour accomplir des tâches spécifiques.",
+    },
+    {
+        question: "Pourquoi faire appel à une agence de développement Web ?",
+        answer: "Faire appel à une agence de développement Web comme Terros permet de bénéficier de l'expertise spécialisée nécessaire pour créer des sites ou des applications web professionnels, fonctionnels et adaptés aux besoins spécifiques de votre entreprise. Chez Terros, nous mettons notamment à profit notre expertise de développement Web pour concevoir et développer rapidement des prototypes de sites et plateformes Web, le tout en vous donnant une visibilité complète et interactive sur le budget, le planning et les étapes du développement.",
+    }
+];
+
 const WebAgencyPage = () => {
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
   return (
     <div className="bg-white text-accent-DEFAULT font-sans">
       <Header />
@@ -169,6 +186,43 @@ const WebAgencyPage = () => {
                   </div>
                   <div className="absolute left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-primary ring-8 ring-white"></div>
                 </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-20 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-secondary">FAQ - Questions sur le développement Web</h2>
+            </div>
+            <div className="max-w-3xl mx-auto space-y-4">
+              {faqWebData.map((faq, index) => (
+                <div key={index} className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden">
+                  <button
+                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                    className="w-full flex justify-between items-center text-left p-6 focus:outline-none focus:bg-primary-light transition-colors"
+                  >
+                    <span className="text-lg font-semibold text-secondary">{faq.question}</span>
+                    <FiChevronDown className={`h-5 w-5 text-primary transition-transform duration-300 ${openFaq === index ? 'rotate-180' : ''}`} />
+                  </button>
+                  <AnimatePresence>
+                    {openFaq === index && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.4, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-6 pb-6 text-gray-600">
+                            <p>{faq.answer}</p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
               ))}
             </div>
           </div>
