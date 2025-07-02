@@ -46,31 +46,6 @@ const ourApproach = [
     },
 ];
 
-const GridPattern = () => (
-    <div className="absolute inset-0 h-full w-full overflow-hidden">
-        <svg
-            className="absolute h-full w-full fill-gray-400/5 [mask-image:radial-gradient(black,transparent_60%)]"
-            aria-hidden="true"
-        >
-            <defs>
-                <pattern
-                    id="grid-pattern"
-                    width="72"
-                    height="72"
-                    patternUnits="userSpaceOnUse"
-                    x="50%"
-                    y="50%"
-                    patternTransform="translate(-36 -36)"
-                >
-                    <path d="M0 36V.5M36 .5V0"></path>
-                </pattern>
-            </defs>
-            <rect width="100%" height="100%" strokeWidth="0" fill="url(#grid-pattern)"></rect>
-        </svg>
-    </div>
-);
-
-
 const ScrapingAgencyPage = () => {
     const FADE_IN_VARIANTS = {
         hidden: { opacity: 0, y: 10 },
@@ -83,36 +58,22 @@ const ScrapingAgencyPage = () => {
 
             <main className="overflow-x-hidden">
                 {/* Hero Section */}
-                <motion.section
-                    initial="hidden"
-                    animate="visible"
-                    variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
-                    className="relative pt-40 pb-24 text-center bg-gradient-to-b from-primary-light/10 via-white to-white"
-                >
-                    <GridPattern />
-                    <div className="container relative">
-                        <motion.h1
-                            variants={FADE_IN_VARIANTS}
-                            className="text-4xl md:text-6xl font-bold text-secondary tracking-tighter"
+                <section className="pt-32 pb-20 bg-primary-light">
+                    <div className="container mx-auto px-4 text-center">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
                         >
-                            Agence Web Scraping
-                        </motion.h1>
-                        <motion.p
-                            variants={FADE_IN_VARIANTS}
-                            className="mt-6 text-lg md:text-xl text-accent-light max-w-3xl mx-auto"
-                        >
-                            Transformez le web en données structurées. Nous mettons en place des programmes de scraping performants, éthiques et conformes au RGPD.
-                        </motion.p>
-                        <motion.div variants={FADE_IN_VARIANTS} className="mt-8">
-                             <Link
-                                to="#"
-                                className="inline-flex items-center gap-2 px-8 py-3 rounded-full font-semibold text-white bg-primary hover:bg-primary-focus transition-all duration-300 transform hover:scale-105 shadow-lg"
-                            >
-                                Obtenir une consultation <FiArrowRight />
-                            </Link>
+                            <h1 className="text-4xl md:text-6xl font-bold text-secondary tracking-tight">
+                                Agence Web Scraping
+                            </h1>
+                            <p className="mt-6 text-lg md:text-xl text-accent-light max-w-3xl mx-auto">
+                                Transformez le web en données structurées. Nous mettons en place des programmes de scraping performants, éthiques et conformes au RGPD.
+                            </p>
                         </motion.div>
                     </div>
-                </motion.section>
+                </section>
 
                 {/* Data Sources Section */}
                 <motion.section
