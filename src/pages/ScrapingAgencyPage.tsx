@@ -2,7 +2,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { FiTarget, FiShield, FiCode, FiCheckCircle } from 'react-icons/fi';
 import { FaAmazon } from "react-icons/fa";
-import { SiTrustpilot, SiBookingdotcom } from "react-icons/si";
+import { SiTrustpilot, SiBookingDotCom } from "react-icons/si";
 
 const ScrapingAgencyPage = () => {
     return (
@@ -60,7 +60,7 @@ const ScrapingAgencyPage = () => {
                         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 text-gray-500">
                             <FaAmazon className="h-12 w-12 md:h-16 md:w-16 text-[#FF9900]" title="Amazon" />
                             <SiTrustpilot className="h-12 w-12 md:h-16 md:w-16 text-[#00B67A]" title="Trustpilot" />
-                            <SiBookingdotcom className="h-12 w-12 md:h-16 md:w-16 text-[#003580]" title="Booking.com" />
+                            <SiBookingDotCom className="h-12 w-12 md:h-16 md:w-16 text-[#003580]" title="Booking.com" />
                         </div>
                     </div>
                 </section>
